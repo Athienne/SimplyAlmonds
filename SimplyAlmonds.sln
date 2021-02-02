@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyAlmonds", "SimplyAlmonds\SimplyAlmonds.csproj", "{D03865A4-8821-4145-B9C0-E8B123E7F36D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D03865A4-8821-4145-B9C0-E8B123E7F36D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D03865A4-8821-4145-B9C0-E8B123E7F36D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D03865A4-8821-4145-B9C0-E8B123E7F36D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D03865A4-8821-4145-B9C0-E8B123E7F36D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {695ABF5B-25AF-4DC4-9211-6B9551F0107E}
+	EndGlobalSection
+EndGlobal
