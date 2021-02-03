@@ -75,6 +75,9 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Pictures\asdasdasd.png" />
+    <Content Include="Pictures\simply almonds.png" />
+    <Content Include="Pictures\simply almonds223.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -192,6 +195,13 @@
     </Compile>
     <Compile Include="UserPages\UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
