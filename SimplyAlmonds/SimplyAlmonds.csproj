@@ -178,17 +178,29 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPages\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserPages\UserMaster.Master.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
     <Compile Include="Website %28Front-End%29\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="UserPages\UserMaster.Master.designer.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
     <Compile Include="Website %28Front-End%29\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPages\AdminMaster.Master" />
     <None Include="packages.config" />
+    <Content Include="UserPages\UserMaster.Master" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -208,6 +220,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Folder Include="Website %28Back-End%29\" />
   </ItemGroup>
