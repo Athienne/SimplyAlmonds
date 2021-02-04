@@ -60,34 +60,18 @@
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
                     <div class="list-group">
                         <!-- Repeater here (not yet fully functional, still in-progress) -->
-                        <asp:Repeater runat="server">
+                        <asp:Repeater id="latestEvents_repeater" runat="server">
                             <ItemTemplate>
                                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">List group item heading</h5>
-                                        <small>3 days ago</small>
+                                        <h5 class="mb-1"><%#Eval("EventTitle")%></h5>
+                                        <small><%#Eval("DateAdded")%></small>
                                     </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                    <small>Donec id elit non mi porta.</small>
+                                    <p class="mb-1"><%#Eval("EventDetails")%></p>
+                                    <small>Click for more details.</small>
                                 </a>
                             </ItemTemplate>
                         </asp:Repeater>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">List group item heading</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -100,34 +84,18 @@
                 <hr />
                 <br />
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
-                    <asp:Repeater runat="server">
+                    <asp:Repeater id="news_repeater" runat="server">
                         <ItemTemplate>
                             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">List group item heading</h5>
-                                    <small>3 days ago</small>
+                                    <h5 class="mb-1"><%#Eval("NewsTitle")%></h5>
+                                    <small><%#Eval("DateAdded")%></small>
                                 </div>
-                                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                <small>Donec id elit non mi porta.</small>
+                                <p class="mb-1"><%#Eval("NewsDetails")%></p>
+                                <small>Click for more details.</small>
                             </a>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small>3 days ago</small>
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        <small>Donec id elit non mi porta.</small>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="text-muted">3 days ago</small>
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        <small class="text-muted">Donec id elit non mi porta.</small>
-                    </a>
                 </div>
             </div>
         </div>

@@ -13,5 +13,23 @@ namespace SimplyAlmonds.Website__Front_End_
 
     public partial class home
     {
+
+        /// <summary>
+        /// latestEvents_repeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater latestEvents_repeater;
+
+        /// <summary>
+        /// news_repeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater news_repeater;
     }
 }
