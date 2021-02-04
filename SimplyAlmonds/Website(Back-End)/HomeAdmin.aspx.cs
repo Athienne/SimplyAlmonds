@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SimplyAlmonds.Website__Front_End_
+namespace SimplyAlmonds.Website_Back_End_
 {
-    public partial class home : System.Web.UI.Page
+    public partial class HomeAdmin : System.Web.UI.Page
     {
         protected void Page_PreInit(object sender, EventArgs e)
         {
             try
             {
-                this.Page.MasterPageFile = "~/UserPages/MasterUser.master";
+                this.Page.MasterPageFile = "~/AdminMaster.Master";
             }
             catch (Exception ex)
             {
@@ -24,6 +24,5 @@ namespace SimplyAlmonds.Website__Front_End_
         {
 
         }
-
     }
 }

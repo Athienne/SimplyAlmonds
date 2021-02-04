@@ -107,6 +107,8 @@
     <Content Include="Website %28Front-End%29\loginuser.aspx" />
     <Content Include="Website %28Front-End%29\signup.aspx" />
     <Content Include="Website %28Front-End%29\WebForm1.aspx" />
+    <Content Include="AdminPages\AdminMaster.Master" />
+    <Content Include="Website%28Back-End%29\HomeAdmin.aspx" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -188,7 +190,6 @@
   <ItemGroup>
     <Compile Include="AdminPages\AdminMaster.Master.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminPages\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
@@ -236,9 +237,15 @@
     <Compile Include="Website %28Front-End%29\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Website%28Back-End%29\HomeAdmin.aspx.cs">
+      <DependentUpon>HomeAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website%28Back-End%29\HomeAdmin.aspx.designer.cs">
+      <DependentUpon>HomeAdmin.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AdminPages\AdminMaster.Master" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
@@ -260,9 +267,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Website %28Back-End%29\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

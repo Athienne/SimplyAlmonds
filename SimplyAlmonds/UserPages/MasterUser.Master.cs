@@ -15,42 +15,30 @@ namespace SimplyAlmonds.UserPages
             {
                 if (Session["role"]==null|| Session["role"] == "")
                 {
-                    LinkButton1.Visible = true; // user login link button
-                    LinkButton2.Visible = true; // sign up link button
+                    loginuser.Visible = true; // user login link button
+                    signuplb.Visible = true; // sign up link button
 
-                    LinkButton3.Visible = false; // logout link button
-                    LinkButton7.Visible = false; // hello user link button
+                    logout.Visible = false; // logout link button
+                    account.Visible = false; // hello user link button
 
 
-                    LinkButton6.Visible = true; // admin login link button
+                    admin.Visible = true; // admin login link button
 
 
                 }
                 else if (Session["role"].Equals("user"))
                 {
-                    LinkButton1.Visible = false; // user login link button
-                    LinkButton2.Visible = false; // sign up link button
+                    loginuser.Visible = false; // user login link button
+                    signuplb.Visible = false; // sign up link button
 
-                    LinkButton3.Visible = true; // logout link button
-                    LinkButton7.Visible = true; // hello user link button
-                    LinkButton7.Text = "Hello " + Session["username"].ToString();
+                    logout.Visible = true; // logout link button
+                    account.Visible = true; // hello user link button
+                    account.Text = "Hello " + Session["username"].ToString();
 
 
-                    LinkButton6.Visible = true; // admin login link button
+                    admin.Visible = true; // admin login link button
                 }
-                else if (Session["role"].Equals("admin"))
-                {
-                    LinkButton1.Visible = false; // user login link button
-                    LinkButton2.Visible = false; // sign up link button
-
-                    LinkButton3.Visible = true; // logout link button
-                    LinkButton7.Visible = true; // hello user link button
-                    LinkButton7.Text = "Hello Admin";
-
-
-                    LinkButton6.Visible = false; // admin login link button
-
-                }
+                
             }
             catch (Exception ex)
             {
@@ -58,72 +46,41 @@ namespace SimplyAlmonds.UserPages
             }
         }
 
-        protected void LinkButton6_Click(object sender, EventArgs e)
+        protected void admin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("adminlogin.aspx");
+            Response.Redirect("loginadmin.aspx");
         }
 
-        protected void LinkButton11_Click(object sender, EventArgs e)
+        protected void loginuser_Click(object sender, EventArgs e)
         {
-            Response.Redirect("adminauthormanagement.aspx");
+            Response.Redirect("loginuser.aspx");
         }
 
-        protected void LinkButton12_Click(object sender, EventArgs e)
+        protected void signuplb_Click(object sender, EventArgs e)
         {
-            Response.Redirect("adminpublishermanagement.aspx");
+            Response.Redirect("signup.aspx");
         }
 
-        protected void LinkButton8_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("adminbookinventory.aspx");
-        }
-
-        protected void LinkButton9_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("adminbookissuing.aspx");
-        }
-
-        protected void LinkButton10_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("adminmembermanagement.aspx");
-        }
-
-        protected void LinkButton4_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("viewbooks.aspx");
-        }
-
-        protected void LinkButton1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("userlogin.aspx");
-        }
-
-        protected void LinkButton2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("usersignup.aspx");
-        }
-
-        //logout button
-        protected void LinkButton3_Click(object sender, EventArgs e)
+        protected void logout_Click(object sender, EventArgs e)
         {
             Session["username"] = "";
             Session["fullname"] = "";
-            Session["role"] = "";
-            Session["status"] = "";
+            //Session["role"] = "";
+            //Session["status"] = "";
 
-            LinkButton1.Visible = true; // user login link button
-            LinkButton2.Visible = true; // sign up link button
+            loginuser.Visible = true; // user login link button
+            signuplb.Visible = true; // sign up link button
 
-            LinkButton3.Visible = false; // logout link button
-            LinkButton7.Visible = false; // hello user link button
+            logout.Visible = false; // logout link button
+            account.Visible = false; // hello user link button
 
 
-            LinkButton6.Visible = true; // admin login link button
+            admin.Visible = true; // admin login link button
 
         }
 
         // view profile
-        protected void LinkButton7_Click(object sender, EventArgs e)
+        protected void account_Click(object sender, EventArgs e)
         {
 
         }
