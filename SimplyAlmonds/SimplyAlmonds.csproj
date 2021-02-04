@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\simplyalmonds.mdb" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -102,6 +103,14 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="SimplyAlmondsUser\WebForm1.aspx" />
+    <Content Include="Website %28Front-End%29\home.aspx" />
+    <Content Include="Website %28Front-End%29\loginadmin.aspx" />
+    <Content Include="Website %28Front-End%29\loginuser.aspx" />
+    <Content Include="Website %28Front-End%29\signup.aspx" />
+    <Content Include="Website %28Front-End%29\useraccount.aspx" />
+    <Content Include="Website %28Front-End%29\WebForm1.aspx" />
+    <Content Include="AdminPages\AdminMaster.Master" />
+    <Content Include="Website%28Back-End%29\HomeAdmin.aspx" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -183,18 +192,52 @@
   <ItemGroup>
     <Compile Include="AdminPages\AdminMaster.Master.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminPages\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserPages\UserMaster.Master.cs">
-      <DependentUpon>UserMaster.Master</DependentUpon>
+    <Compile Include="UserPages\MasterUser.Master.cs">
+      <DependentUpon>MasterUser.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserPages\UserMaster.Master.designer.cs">
-      <DependentUpon>UserMaster.Master</DependentUpon>
+    <Compile Include="UserPages\MasterUser.Master.designer.cs">
+      <DependentUpon>MasterUser.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\loginadmin.aspx.cs">
+      <DependentUpon>loginadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\loginadmin.aspx.designer.cs">
+      <DependentUpon>loginadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\loginuser.aspx.cs">
+      <DependentUpon>loginuser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\loginuser.aspx.designer.cs">
+      <DependentUpon>loginuser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\useraccount.aspx.cs">
+      <DependentUpon>useraccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\useraccount.aspx.designer.cs">
+      <DependentUpon>useraccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="SimplyAlmondsUser\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -203,11 +246,16 @@
     <Compile Include="SimplyAlmondsUser\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Website%28Back-End%29\HomeAdmin.aspx.cs">
+      <DependentUpon>HomeAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website%28Back-End%29\HomeAdmin.aspx.designer.cs">
+      <DependentUpon>HomeAdmin.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AdminPages\AdminMaster.Master" />
     <None Include="packages.config" />
-    <Content Include="UserPages\UserMaster.Master" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -220,6 +268,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="UserPages\MasterUser.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -227,9 +276,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SimplyAlmondsAdmin\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

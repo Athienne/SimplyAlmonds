@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="SimplyAlmonds.AdminPages.AdminMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterUser.master.cs" Inherits="SimplyAlmonds.UserPages.MasterUser" %>
 
 <!DOCTYPE html>
 
@@ -19,8 +19,7 @@
         <div>
             <nav class="navbar navbar-expand-lg navbar-light">
                <a class="navbar-brand" href="#">
-               <img src="imgs/books.png" width="30" height="30" />
-               Home
+               &nbsp;Home
                </a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -28,16 +27,17 @@
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="HomeAdmin.aspx">Home</a>
+                        <a class="nav-link" href="homepage.aspx">Home</a>
                      </li>
                      <li class="nav-item active">
                         <a class="nav-link" href="#">About Us</a>
                      </li>
                      <li class="nav-item active">
-                        <a class="nav-link" href="#">Terms</a>
+                        <a class="nav-link" href="#">Discography</a>
                      </li>
                   </ul>
                   <ul class="navbar-nav">
+
                      <li class="nav-item active">
                         <asp:LinkButton class="nav-link" ID="loginuser" runat="server" OnClick="loginuser_Click">User Login</asp:LinkButton>
                      </li>
@@ -48,7 +48,7 @@
                         <asp:LinkButton class="nav-link" ID="logout" runat="server" OnClick="logout_Click" Visible="False">Logout</asp:LinkButton>
                      </li>
                      <li class="nav-item active">
-                        <asp:LinkButton class="nav-link" ID="account" runat="server"  Visible="False">Hello user</asp:LinkButton>
+                        <asp:LinkButton class="nav-link" ID="account" runat="server" OnClick="account_Click" Visible="False">Hello user</asp:LinkButton>
                      </li>
                   </ul>
                </div>

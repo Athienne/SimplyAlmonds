@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SimplyAlmonds.AdminPages
+namespace SimplyAlmonds.UserPages
 {
 
 
-    public partial class AdminMaster
+    public partial class MasterUser
     {
 
         /// <summary>

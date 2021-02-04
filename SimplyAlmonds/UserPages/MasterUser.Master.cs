@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SimplyAlmonds.AdminPages
+namespace SimplyAlmonds.UserPages
 {
-    public partial class AdminMaster : System.Web.UI.MasterPage
+    public partial class MasterUser : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                if (Session["role"] == null || Session["role"] == "")
+                if (Session["role"]==null|| Session["role"] == "")
                 {
                     loginuser.Visible = true; // user login link button
                     signuplb.Visible = true; // sign up link button
@@ -26,25 +26,26 @@ namespace SimplyAlmonds.AdminPages
 
 
                 }
-                else if (Session["role"].Equals("admin"))
+                else if (Session["role"].Equals("user"))
                 {
                     loginuser.Visible = false; // user login link button
                     signuplb.Visible = false; // sign up link button
 
                     logout.Visible = true; // logout link button
                     account.Visible = true; // hello user link button
-                    account.Text = "Hello " + "Admin".ToString();
+                    account.Text = "Hello " + Session["username"].ToString();
 
 
                     admin.Visible = true; // admin login link button
                 }
-
+                
             }
             catch (Exception ex)
             {
 
             }
         }
+
         protected void admin_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Website (Front-End)/loginadmin.aspx");
@@ -59,6 +60,7 @@ namespace SimplyAlmonds.AdminPages
         {
             Response.Redirect("~/Website (Front-End)/signup.aspx");
         }
+
         protected void logout_Click(object sender, EventArgs e)
         {
             Session["username"] = "";
@@ -75,6 +77,12 @@ namespace SimplyAlmonds.AdminPages
 
             admin.Visible = true; // admin login link button
 
+        }
+
+        // view profile
+        protected void account_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Website (Front-End)/useraccount.aspx");
         }
     }
 }
