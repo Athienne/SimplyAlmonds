@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="HomeAdmin.aspx.cs" Inherits="SimplyAlmonds.Website_Back_End_.HomeAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
@@ -90,6 +90,13 @@
                         </a>
                     </div>
                 </div>
+                <br />
+                <br />
+                <asp:Button ID="addLatestEvents" runat="server" Text="Add Items" class="btn btn-success" OnClick="addLatestEvents_Click"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="editLatestEvents" runat="server" Text="Edit Items" class="btn btn-info" OnClick="editLatestEvents_Click"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="deleteLatestEvents" runat="server" Text="Delete Items" class="btn btn-danger" OnClick="deleteLatestEvents_Click"/>
             </div>
 
             <br />
@@ -129,6 +136,13 @@
                         <small class="text-muted">Donec id elit non mi porta.</small>
                     </a>
                 </div>
+                <br />
+                <br />
+                <asp:Button ID="addNews" runat="server" Text="Add Items" class="btn btn-success" OnClick="addNews_Click"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="editNews" runat="server" Text="Edit Items" class="btn btn-info" OnClick="editNews_Click"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="deleteNews" runat="server" Text="Delete Items" class="btn btn-danger" OnClick="deleteNews_Click"/>
             </div>
         </div>
 
@@ -175,4 +189,3 @@
 
     </div>
 </asp:Content>
-

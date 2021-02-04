@@ -24,6 +24,5 @@ namespace SimplyAlmonds.Website__Front_End_
         {
 
         }
-
     }
 }
