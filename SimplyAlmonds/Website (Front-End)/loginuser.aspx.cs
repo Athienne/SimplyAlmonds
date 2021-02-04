@@ -13,32 +13,39 @@ namespace SimplyAlmonds.Website__Front_End_
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
             try
             {
+                
                 string connstr = "Provider=Microsoft.Jet.OleDB.4.0; Data Source=";
 
                 connstr += Server.MapPath("~/App_Data/simplyalmonds.Mdb");
 
                 OleDbConnection conn = new OleDbConnection(connstr);
 
+                OleDbCommand cmd = new OleDbCommand("select * from users where username='" + TextBox1.Text.Trim() + "' AND passw='" + TextBox2.Text.Trim() + "' AND user_type='user';", conn);
                 conn.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
 
-                OleDbCommand cmd = new OleDbCommand("select * from users where username='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", conn);
-                cmd.ExecuteNonQuery();
-                int row = (int)cmd.ExecuteScalar();
-                conn.Close();
-                if (row > 0)
+                if (reader.Read() == true)
                 {
-                    Response.Write("<script>alert('Successful login');</script>");
+                    
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Login Successful!')", true);
                     Session["username"] = TextBox1.Text.Trim();
                     Session["fullname"] = TextBox2.Text.Trim();
                     Session["role"] = "user";
-                    Response.Redirect("home.aspx");
+                    Response.Redirect("~/Website (Front-End)/useraccount.aspx");
                 }
 
                 else
                 {
-                    Response.Write("<script>alert('Invalid credentials');</script>");
+                    
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Invalid Credentials')", true);
                 }
 
             }

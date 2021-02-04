@@ -47,17 +47,17 @@ namespace SimplyAlmonds.AdminPages
         }
         protected void admin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("loginadmin.aspx");
+            Response.Redirect("~/Website (Front-End)/loginadmin.aspx");
         }
 
         protected void loginuser_Click(object sender, EventArgs e)
         {
-            Response.Redirect("loginuser.aspx");
+            Response.Redirect("~/Website (Front-End)/loginuser.aspx");
         }
 
         protected void signuplb_Click(object sender, EventArgs e)
         {
-            Response.Redirect("signup.aspx");
+            Response.Redirect("~/Website (Front-End)/signup.aspx");
         }
         protected void logout_Click(object sender, EventArgs e)
         {

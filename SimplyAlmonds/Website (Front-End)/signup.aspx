@@ -29,19 +29,19 @@
                      <div class="col">
                         <label>Username</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="uname" runat="server" placeholder="Admin ID"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="uname" runat="server" placeholder="username" MaxLength="30"></asp:TextBox>
                         </div>
                          <label>E-mail</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="email" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="email" runat="server" placeholder="email" MaxLength="30"></asp:TextBox>
                         </div>
                         <label>Password</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="pass" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="pass" runat="server" placeholder="Password" TextMode="Password" MaxLength="30"></asp:TextBox>
                         </div>
                          
                         <div class="form-group">
-                           <asp:Button class="btn btn-success btn-block btn-lg" ID="signupbtn" runat="server" Text="Login" OnClick="signupbtn_Click" />
+                           <asp:Button class="btn btn-success btn-block btn-lg" ID="signupbtn" runat="server" Text="Sign Up" OnClick="signupbtn_Click" />
                         </div>
                      </div>
                   </div>

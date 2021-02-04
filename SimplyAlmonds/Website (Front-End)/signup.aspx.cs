@@ -26,15 +26,22 @@ namespace SimplyAlmonds.Website__Front_End_
                 }
                 else
                 {
+                    
                     string connstr = "Provider=Microsoft.Jet.OleDB.4.0; Data Source=";
                     connstr += Server.MapPath("~/App_Data/simplyalmonds.Mdb");
                     OleDbConnection conn = new OleDbConnection(connstr);
                     conn.Open();
-                    OleDbCommand cmd = new OleDbCommand("insert into users values('" + uname.Text + "' , '" + pass.Text + "'"+"','"+email.Text+"')" , conn);
+                    OleDbCommand cmd = new OleDbCommand("insert into users values('" + uname.Text + "' , '" + pass.Text + "'"+"','"+email.Text+ "','user');", conn);
                     cmd.ExecuteNonQuery();
-                    int row = (int)cmd.ExecuteScalar();
+
+                    
+
+                    
+                    
                     conn.Close();
                     Response.Redirect("~/Website(Front-End)/home.aspx");
+                    
+
                 }
             }
             catch (Exception ex)
