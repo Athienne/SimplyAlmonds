@@ -16,7 +16,7 @@ namespace SimplyAlmonds.Website__Front_End_
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void loginbtn_Click(object sender, EventArgs e)
         {
             try
             {
