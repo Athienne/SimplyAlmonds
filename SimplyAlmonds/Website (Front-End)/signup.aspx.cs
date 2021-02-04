@@ -44,7 +44,7 @@ namespace SimplyAlmonds.Website__Front_End_
 
                     else
                     {
-                        Response.Write("<script>alert('sign up successful!');</script>");
+                        
 
                         cmd.ExecuteNonQuery();
 
