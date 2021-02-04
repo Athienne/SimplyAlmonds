@@ -26,22 +26,33 @@ namespace SimplyAlmonds.Website__Front_End_
                 }
                 else
                 {
-                    
+
                     string connstr = "Provider=Microsoft.Jet.OleDB.4.0; Data Source=";
                     connstr += Server.MapPath("~/App_Data/simplyalmonds.Mdb");
                     OleDbConnection conn = new OleDbConnection(connstr);
                     conn.Open();
-                    OleDbCommand cmd = new OleDbCommand("insert into users values('" + uname.Text + "' , '" + pass.Text + "'"+"','"+email.Text+ "','user');", conn);
-                    cmd.ExecuteNonQuery();
+                    OleDbCommand cmd = new OleDbCommand("insert into users(username,passw,email,user_type) values('" + uname.Text.Trim() + "' , '" + pass.Text + "','"+email.Text.Trim() + "','user');", conn);
+                    OleDbCommand cmd2 = new OleDbCommand("select * from users where email='" + email.Text.Trim()+"';", conn);
+                    OleDbDataReader reader = cmd2.ExecuteReader();
+
+                    if (reader.Read() == true)
+                    {
+
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('the email you entered is already in the database')", true);
+
+                    }
+
+                    else
+                    {
+                        Response.Write("<script>alert('sign up successful!');</script>");
+
+                        cmd.ExecuteNonQuery();
+
+                        conn.Close();
+                        Response.Redirect("~/Website (Front-End)/home.aspx");
+                    }
 
                     
-
-                    
-                    
-                    conn.Close();
-                    Response.Redirect("~/Website(Front-End)/home.aspx");
-                    
-
                 }
             }
             catch (Exception ex)
