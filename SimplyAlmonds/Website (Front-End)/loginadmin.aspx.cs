@@ -28,7 +28,7 @@ namespace SimplyAlmonds.Website__Front_End_
 
                 conn.Open();
 
-                OleDbCommand cmd = new OleDbCommand("select * from admin_table where username='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", conn);
+                OleDbCommand cmd = new OleDbCommand("select * from users where username='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", conn);
 
                 cmd.ExecuteNonQuery();
 
@@ -40,8 +40,8 @@ namespace SimplyAlmonds.Website__Front_End_
                     Response.Write("<script>alert('Successful login');</script>");
                     Session["username"] = TextBox1.Text.Trim();
                     Session["fullname"] = TextBox2.Text.Trim();
-                    Session["role"] = "admin";
-                    Response.Redirect("home.aspx");
+                    //Session["role"] = "admin";
+                    Response.Redirect("~/Website(Back-End)/HomeAdmin.aspx");
                 }
 
                 else

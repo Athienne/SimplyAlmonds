@@ -65,7 +65,7 @@ namespace SimplyAlmonds.UserPages
         {
             Session["username"] = "";
             Session["fullname"] = "";
-            //Session["role"] = "";
+            Session["role"] = "";
             //Session["status"] = "";
 
             loginuser.Visible = true; // user login link button
@@ -82,7 +82,7 @@ namespace SimplyAlmonds.UserPages
         // view profile
         protected void account_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("useraccount.aspx");
         }
     }
 }

@@ -13,7 +13,7 @@ namespace SimplyAlmonds.Website_Back_End_
         {
             try
             {
-                this.Page.MasterPageFile = "~/AdminMaster.Master";
+                this.Page.MasterPageFile = "~/AdminPages/AdminMaster.master";
             }
             catch (Exception ex)
             {

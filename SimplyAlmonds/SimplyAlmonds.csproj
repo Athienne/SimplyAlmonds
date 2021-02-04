@@ -106,6 +106,7 @@
     <Content Include="Website %28Front-End%29\loginadmin.aspx" />
     <Content Include="Website %28Front-End%29\loginuser.aspx" />
     <Content Include="Website %28Front-End%29\signup.aspx" />
+    <Content Include="Website %28Front-End%29\useraccount.aspx" />
     <Content Include="Website %28Front-End%29\WebForm1.aspx" />
     <Content Include="AdminPages\AdminMaster.Master" />
     <Content Include="Website%28Back-End%29\HomeAdmin.aspx" />
@@ -229,6 +230,13 @@
     </Compile>
     <Compile Include="Website %28Front-End%29\signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\useraccount.aspx.cs">
+      <DependentUpon>useraccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\useraccount.aspx.designer.cs">
+      <DependentUpon>useraccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

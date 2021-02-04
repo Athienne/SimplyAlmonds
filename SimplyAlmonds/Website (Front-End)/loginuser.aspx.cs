@@ -23,11 +23,8 @@ namespace SimplyAlmonds.Website__Front_End_
 
                 conn.Open();
 
-                OleDbCommand cmd = new OleDbCommand("select * from admin_table where username='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", conn);
-
+                OleDbCommand cmd = new OleDbCommand("select * from users where username='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", conn);
                 cmd.ExecuteNonQuery();
-
-
                 int row = (int)cmd.ExecuteScalar();
                 conn.Close();
                 if (row > 0)
