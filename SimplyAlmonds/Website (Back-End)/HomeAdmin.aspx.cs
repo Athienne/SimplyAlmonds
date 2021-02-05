@@ -55,9 +55,14 @@ namespace SimplyAlmonds.Website_Back_End_
             objConn.Close();
         }
 
+        // Code commented for future references
+        // Do not delete, thanks~!
+
+        /*
         protected void DisplayLatestEvents()
         {
             objConn.Open();
+            strSQL = "SELECT EventTitle, EventDetails, DateAdded FROM table_LatestEvents";
             OleDbDataReader dtReader;
             objCmd = new OleDbCommand(strSQL, objConn);
             dtReader = objCmd.ExecuteReader();
@@ -72,6 +77,7 @@ namespace SimplyAlmonds.Website_Back_End_
         protected void DisplayNews()
         {
             objConn.Open();
+            strSQL = "SELECT NewsTitle, NewsDetails, DateAdded FROM table_News";
             OleDbDataReader dtReader;
             objCmd = new OleDbCommand(strSQL, objConn);
             dtReader = objCmd.ExecuteReader();
@@ -82,18 +88,12 @@ namespace SimplyAlmonds.Website_Back_End_
             dtReader.Close();
             objConn.Close();
         }
+        */
 
         protected void addLatestEvents_Click(object sender, EventArgs e)
         {
-            // Test
-            Response.Write("<script>alert('addlatestevents button works!')</script>");
-
-            // Code for adding latest events
-            //
-            //
-            //
-
-            DisplayLatestEvents();
+            // Go to LatestEventAdd Page
+            Response.Redirect("~/Website%20(Back-End)/LatestEventAdd.aspx");
         }
 
         protected void editLatestEvents_Click(object sender, EventArgs e)
@@ -105,8 +105,6 @@ namespace SimplyAlmonds.Website_Back_End_
             //
             //
             //
-
-            DisplayLatestEvents();
         }
 
         protected void deleteLatestEvents_Click(object sender, EventArgs e)
@@ -118,8 +116,6 @@ namespace SimplyAlmonds.Website_Back_End_
             //
             //
             //
-
-            DisplayLatestEvents();
         }
 
         protected void addNews_Click(object sender, EventArgs e)

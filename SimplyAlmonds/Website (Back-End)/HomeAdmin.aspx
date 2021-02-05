@@ -1,6 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="HomeAdmin.aspx.cs" Inherits="SimplyAlmonds.Website_Back_End_.HomeAdmin" %>
+﻿<%@ Page Title="Simply Almonds" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="HomeAdmin.aspx.cs" Inherits="SimplyAlmonds.Website_Back_End_.HomeAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Home Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <script src="../Scripts/jquery-3.0.0.min.js"></script>
@@ -63,7 +62,7 @@
                         <!-- Repeater here (not yet fully functional, still in-progress) -->
                         <asp:Repeater id="latestEvents_repeater" runat="server">
                             <ItemTemplate>
-                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <a href="~/Website%20(Front-End)/signup.aspx" class="list-group-item list-group-item-action flex-column align-items-start" runat="server">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="mb-1"><%#Eval("EventTitle")%></h5>
                                         <small><%#Eval("DateAdded")%></small>
