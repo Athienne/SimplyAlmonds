@@ -212,6 +212,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserPages\MasterUser.Master.designer.cs">
+	</Compile>
     <Compile Include="Website %28Back-End%29\LatestEventAdd.aspx.designer.cs">
       <DependentUpon>LatestEventAdd.aspx</DependentUpon>
     </Compile>
@@ -235,8 +236,10 @@
     </Compile>
     <Compile Include="Website %28Back-End%29\NewsEdit.aspx.designer.cs">
       <DependentUpon>NewsEdit.aspx</DependentUpon>
+	</Compile>
     <Compile Include="Website %28Back-End%29\accountadmin.aspx.designer.cs">
       <DependentUpon>accountadmin.aspx</DependentUpon>
+	</Compile>
     <Compile Include="Website %28Back-End%29\NewsEdit.aspx.cs">
       <DependentUpon>NewsEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
