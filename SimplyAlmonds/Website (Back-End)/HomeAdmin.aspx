@@ -59,7 +59,6 @@
                 <br />
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
                     <div class="list-group">
-                        <!-- Repeater here (not yet fully functional, still in-progress) -->
                         <asp:Repeater id="latestEvents_repeater" runat="server">
                             <ItemTemplate>
                                 <a href="~/Website%20(Back-End)/LatestEventEdit.aspx" class="list-group-item list-group-item-action flex-column align-items-start" runat="server">
