@@ -4,20 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using System.Data.OleDb;
 
 namespace SimplyAlmonds.Website__Back_End_
 {
-    public partial class accountadmin : System.Web.UI.Page
+    public partial class AccountAdmin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-           
         {
             string connstr = "Provider=Microsoft.Jet.OleDB.4.0; Data Source=";
             connstr = "Provider=Microsoft.Jet.OleDB.4.0; Data Source=";
 
-            connstr += Server.MapPath("~/App_Data/Database3.Mdb");
+            connstr += Server.MapPath("~/App_Data/simplyalmonds.Mdb");
             OleDbConnection conn = new OleDbConnection(connstr);
             conn = new OleDbConnection(connstr);
 
