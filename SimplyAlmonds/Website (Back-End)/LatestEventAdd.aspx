@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="LatestEventAdd.aspx.cs" Inherits="SimplyAlmonds.Website__Back_End_.LatestEventAdd" %>
+﻿<%@ Page Title="Add New Event" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="LatestEventAdd.aspx.cs" Inherits="SimplyAlmonds.Website__Back_End_.LatestEventAdd" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
