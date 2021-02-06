@@ -37,7 +37,7 @@ namespace SimplyAlmonds.Website__Front_End_
                     Session["fullname"] = TextBox2.Text.Trim();
                     Session["role"] = "admin";
                     conn.Close();
-                    Response.Redirect("~/Website(Back-End)/HomeAdmin.aspx");
+                    Response.Redirect("~/Website (Back-End)/HomeAdmin.aspx");
                 }
 
                 else 
