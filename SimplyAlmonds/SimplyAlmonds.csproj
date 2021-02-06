@@ -216,6 +216,10 @@
     <Compile Include="Website %28Back-End%29\AccountAdmin.aspx.designer.cs">
       <DependentUpon>AccountAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Website %28Back-End%29\LatestEventAdd.aspx.cs">
+      <DependentUpon>LatestEventAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Website %28Back-End%29\LatestEventAdd.aspx.designer.cs">
       <DependentUpon>LatestEventAdd.aspx</DependentUpon>
     </Compile>

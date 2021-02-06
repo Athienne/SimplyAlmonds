@@ -28,31 +28,34 @@ namespace SimplyAlmonds.Website_Back_End_
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            String strConnString;
-            strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
-            Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
-            objConn = new OleDbConnection(strConnString);
-            objConn.Open();
+            if (!Page.IsPostBack)
+            {
+                String strConnString;
+                strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
+                Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
+                objConn = new OleDbConnection(strConnString);
+                objConn.Open();
 
-            // Intial load of Latest Events and News
-            strSQL = "SELECT * FROM table_LatestEvents";
+                // Intial load of Latest Events and News
+                strSQL = "SELECT * FROM table_LatestEvents";
 
-            OleDbDataReader dtReader;
-            objCmd = new OleDbCommand(strSQL, objConn);
-            dtReader = objCmd.ExecuteReader();
+                OleDbDataReader dtReader;
+                objCmd = new OleDbCommand(strSQL, objConn);
+                dtReader = objCmd.ExecuteReader();
 
-            latestEvents_repeater.DataSource = dtReader;
-            latestEvents_repeater.DataBind();
+                latestEvents_repeater.DataSource = dtReader;
+                latestEvents_repeater.DataBind();
 
-            strSQL = "SELECT * FROM table_News";
-            objCmd = new OleDbCommand(strSQL, objConn);
-            dtReader = objCmd.ExecuteReader();
+                strSQL = "SELECT * FROM table_News";
+                objCmd = new OleDbCommand(strSQL, objConn);
+                dtReader = objCmd.ExecuteReader();
 
-            news_repeater.DataSource = dtReader;
-            news_repeater.DataBind();
+                news_repeater.DataSource = dtReader;
+                news_repeater.DataBind();
 
-            dtReader.Close();
-            objConn.Close();
+                dtReader.Close();
+                objConn.Close();
+            }
         }
 
         // Code commented for future references

@@ -43,6 +43,8 @@
             <p style="font-style: oblique;"><small>NOTE: All fields must be filled.</small></p>
         </div>
         <asp:Button ID="addNewEvent" runat="server" Text="Submit New Event" class="btn btn-primary" OnClick="addNewEvent_Click" />
+        <br />
+        <br />
 
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
