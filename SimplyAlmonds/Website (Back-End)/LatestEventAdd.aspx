@@ -49,7 +49,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -58,8 +58,8 @@
                         Are you sure about these changes?
                     </div>
                     <div class="modal-footer">
-                        <asp:Button type="button" id="yes_latestevents" class="btn btn-secondary" runat="server" Text="Yes" OnClick="addevent_Click"/>
-                        <asp:Button type="button" ID="no_latestevents" class="btn btn-primary" runat="server" data-dismiss="modal" Text="No"/>
+                        <asp:Button type="button" id="yes_latestevents" class="btn btn-primary" runat="server" Text="Yes" OnClick="addevent_Click"/>
+                        <asp:Button type="button" ID="no_latestevents" class="btn btn-secondary" runat="server" data-dismiss="modal" Text="No"/>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@
     <script src="../Scripts/jquery-3.0.0.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
     <script src="../Scripts/popper.min.js"></script>
+    <script src="https://unpkg.com/pretty-scroll@1.1.0/js/pretty-scroll.js"></script>
     <!-- CSS Scripts -->
     <style>
         .heading_characteristics {
@@ -29,6 +30,7 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0" nonce="2ZFddNXz"></script>
     <div style="background-color: #cd83ff">
         <div class="container">
+            <!--Carousel Slides-->
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleSlidesOnly" data-slide-to="0" class="active"></li>
@@ -53,13 +55,13 @@
             <br />
             <br />
 
+            <!--Latest Events-->
             <div class="jumbotron" style="background-color: #d3b0ff">
                 <h1 class="heading_characteristics">LATEST EVENTS</h1>
                 <hr />
                 <br />
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
                     <div class="list-group">
-                        <!-- Repeater here (not yet fully functional, still in-progress) -->
                         <asp:Repeater id="latestEvents_repeater" runat="server">
                             <ItemTemplate>
                                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -78,7 +80,7 @@
 
             <br />
             <br />
-
+            <!--News-->
             <div class="jumbotron" style="background-color: #d3b0ff">
                 <h1 class="heading_characteristics">NEWS</h1>
                 <hr />

@@ -27,9 +27,9 @@
                   </div>
                   <div class="row">
                      <div class="col">
-                        <label>Member ID</label>
+                        <label>Member Username</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Member ID" MaxLength="30"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Member Username" MaxLength="30"></asp:TextBox>
                         </div>
                         <label>Password</label>
                         <div class="form-group">

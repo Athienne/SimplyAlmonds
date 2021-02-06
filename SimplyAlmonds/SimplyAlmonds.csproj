@@ -1,4 +1,11 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
+    <ItemGroup>
+      <RoslynFiles Include="$(CscToolPath)\*" />
+    </ItemGroup>
+    <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
+    <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
+  </Target>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -115,6 +122,7 @@
     <Content Include="Website %28Front-End%29\useraccount.aspx" />
     <Content Include="AdminPages\AdminMaster.Master" />
     <Content Include="Website %28Back-End%29\HomeAdmin.aspx" />
+    <Content Include="Website %28Front-End%29\shop.aspx" />
     <None Include="Properties\PublishProfiles\simplyalmonds - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\simplyalmonds - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\simplyalmonds - Web Deploy.pubxml" />
@@ -295,6 +303,13 @@
     </Compile>
     <Compile Include="Website %28Back-End%29\HomeAdmin.aspx.designer.cs">
       <DependentUpon>HomeAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\shop.aspx.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\shop.aspx.designer.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
