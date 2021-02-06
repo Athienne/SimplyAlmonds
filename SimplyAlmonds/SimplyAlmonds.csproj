@@ -107,9 +107,11 @@
     <Content Include="Website %28Back-End%29\LatestEventEdit.aspx" />
     <Content Include="Website %28Back-End%29\NewsAdd.aspx" />
     <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
+    <Content Include="Website %28Front-End%29\Account.aspx" />
     <Content Include="Website %28Front-End%29\home.aspx" />
     <Content Include="Website %28Front-End%29\loginadmin.aspx" />
     <Content Include="Website %28Front-End%29\loginuser.aspx" />
+    <Content Include="Website %28Front-End%29\shop.aspx" />
     <Content Include="Website %28Front-End%29\signup.aspx" />
     <Content Include="Website %28Front-End%29\useraccount.aspx" />
     <Content Include="AdminPages\AdminMaster.Master" />
@@ -238,6 +240,13 @@
     <Compile Include="Website %28Back-End%29\NewsEdit.aspx.designer.cs">
       <DependentUpon>NewsEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Website %28Front-End%29\Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Website %28Front-End%29\home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -258,6 +267,13 @@
     </Compile>
     <Compile Include="Website %28Front-End%29\loginuser.aspx.designer.cs">
       <DependentUpon>loginuser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\shop.aspx.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\shop.aspx.designer.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>
