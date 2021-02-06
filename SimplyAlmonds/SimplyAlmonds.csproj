@@ -105,13 +105,7 @@
     <Content Include="Website %28Back-End%29\LatestEventAdd.aspx" />
     <Content Include="Website %28Back-End%29\LatestEventEdit.aspx" />
     <Content Include="Website %28Back-End%29\NewsAdd.aspx" />
-    <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
     <Content Include="Website %28Back-End%29\accountadmin.aspx" />
-    <Content Include="Website %28Back-End%29\NewsDelete.aspx" />
-    <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
-    <Content Include="Website %28Back-End%29\NewsDelete.aspx" />
-    <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
-    <Content Include="Website %28Back-End%29\NewsDelete.aspx" />
     <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
     <Content Include="Website %28Front-End%29\home.aspx" />
     <Content Include="Website %28Front-End%29\loginadmin.aspx" />
@@ -212,7 +206,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserPages\MasterUser.Master.designer.cs">
-	</Compile>
+    </Compile>
     <Compile Include="Website %28Back-End%29\LatestEventAdd.aspx.designer.cs">
       <DependentUpon>LatestEventAdd.aspx</DependentUpon>
     </Compile>
@@ -230,16 +224,9 @@
     <Compile Include="Website %28Back-End%29\NewsAdd.aspx.designer.cs">
       <DependentUpon>NewsAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Website %28Back-End%29\NewsEdit.aspx.cs">
-      <DependentUpon>NewsEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Website %28Back-End%29\NewsEdit.aspx.designer.cs">
-      <DependentUpon>NewsEdit.aspx</DependentUpon>
-	</Compile>
     <Compile Include="Website %28Back-End%29\accountadmin.aspx.designer.cs">
       <DependentUpon>accountadmin.aspx</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Website %28Back-End%29\NewsEdit.aspx.cs">
       <DependentUpon>NewsEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
