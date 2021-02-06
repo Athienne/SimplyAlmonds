@@ -11,7 +11,9 @@ namespace SimplyAlmonds.Website__Back_End_
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HttpContext konteskto = HttpContext.Current;
+            string idstring = konteskto.Request["id"];
+            Response.Write("<script>alert('the id is " + idstring + "')</script>");
         }
     }
 }

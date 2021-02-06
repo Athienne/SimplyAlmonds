@@ -32,12 +32,19 @@ namespace SimplyAlmonds.Website__Front_End_
 
                 if (reader.Read() == true)
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Login Successful!')", true);
+                    // Response.Write("<script>alert('success!')</script>");
+                    // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Login Successful!')", true);
                     Session["username"] = TextBox1.Text.Trim();
                     Session["fullname"] = TextBox2.Text.Trim();
                     Session["role"] = "admin";
                     conn.Close();
-                    Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
+                    Response.Write(@"
+                         <script>
+                            alert('success!');
+                            window.location = 'HomeAdmin.aspx';
+                        </script>
+                    ");
+                    // Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
                 }
 
                 else 

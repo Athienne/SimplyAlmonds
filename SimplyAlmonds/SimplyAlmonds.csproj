@@ -109,7 +109,7 @@
     <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
     <Content Include="Website %28Front-End%29\Account.aspx" />
     <Content Include="Website %28Front-End%29\home.aspx" />
-    <Content Include="Website %28Front-End%29\loginadmin.aspx" />
+    <Content Include="Website %28Back-End%29\loginadmin.aspx" />
     <Content Include="Website %28Front-End%29\loginuser.aspx" />
     <Content Include="Website %28Front-End%29\shop.aspx" />
     <Content Include="Website %28Front-End%29\signup.aspx" />
@@ -254,11 +254,11 @@
     <Compile Include="Website %28Front-End%29\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Website %28Front-End%29\loginadmin.aspx.cs">
+    <Compile Include="Website %28Back-End%29\loginadmin.aspx.cs">
       <DependentUpon>loginadmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Website %28Front-End%29\loginadmin.aspx.designer.cs">
+    <Compile Include="Website %28Back-End%29\loginadmin.aspx.designer.cs">
       <DependentUpon>loginadmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\loginuser.aspx.cs">

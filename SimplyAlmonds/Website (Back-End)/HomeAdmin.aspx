@@ -61,12 +61,12 @@
                     <div class="list-group">
                         <asp:Repeater id="latestEvents_repeater" runat="server">
                             <ItemTemplate>
-                                <a href="~/Website%20(Back-End)/LatestEventEdit.aspx" class="list-group-item list-group-item-action flex-column align-items-start" runat="server">
+                                <a href="/Website%20(Back-End)/LatestEventEdit.aspx?id=<%#Eval("ID")%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="mb-1"><%#Eval("EventTitle")%></h5>
                                         <small><%#Eval("DateAdded")%></small>
                                     </div>
-                                    <p class="mb-1"><%#Eval("EventDetails")%><small style="visibility: hidden;"><%#Eval("ID")%></small></p>
+                                    <p class="mb-1"><%#Eval("EventDetails")%></p>
                                     <small>Click for more details.</small>
                                 </a>
                             </ItemTemplate>
