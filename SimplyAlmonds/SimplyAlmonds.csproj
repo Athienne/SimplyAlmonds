@@ -106,6 +106,13 @@
     <Content Include="Website %28Back-End%29\LatestEventEdit.aspx" />
     <Content Include="Website %28Back-End%29\NewsAdd.aspx" />
     <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
+    <Content Include="Website %28Back-End%29\accountadmin.aspx" />
+    <Content Include="Website %28Back-End%29\NewsDelete.aspx" />
+    <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
+    <Content Include="Website %28Back-End%29\NewsDelete.aspx" />
+    <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
+    <Content Include="Website %28Back-End%29\NewsDelete.aspx" />
+    <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
     <Content Include="Website %28Front-End%29\home.aspx" />
     <Content Include="Website %28Front-End%29\loginadmin.aspx" />
     <Content Include="Website %28Front-End%29\loginuser.aspx" />
@@ -113,9 +120,6 @@
     <Content Include="Website %28Front-End%29\useraccount.aspx" />
     <Content Include="AdminPages\AdminMaster.Master" />
     <Content Include="Website %28Back-End%29\HomeAdmin.aspx" />
-    <None Include="Properties\PublishProfiles\simplyalmonds - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\simplyalmonds - ReadOnly - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\simplyalmonds - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -208,12 +212,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserPages\MasterUser.Master.designer.cs">
-      <DependentUpon>MasterUser.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Website %28Back-End%29\LatestEventAdd.aspx.cs">
-      <DependentUpon>LatestEventAdd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Website %28Back-End%29\LatestEventAdd.aspx.designer.cs">
       <DependentUpon>LatestEventAdd.aspx</DependentUpon>
     </Compile>
@@ -231,6 +229,14 @@
     <Compile Include="Website %28Back-End%29\NewsAdd.aspx.designer.cs">
       <DependentUpon>NewsAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Website %28Back-End%29\NewsEdit.aspx.cs">
+      <DependentUpon>NewsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\NewsEdit.aspx.designer.cs">
+      <DependentUpon>NewsEdit.aspx</DependentUpon>
+    <Compile Include="Website %28Back-End%29\accountadmin.aspx.designer.cs">
+      <DependentUpon>accountadmin.aspx</DependentUpon>
     <Compile Include="Website %28Back-End%29\NewsEdit.aspx.cs">
       <DependentUpon>NewsEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
