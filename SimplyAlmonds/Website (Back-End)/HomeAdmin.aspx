@@ -59,15 +59,14 @@
                 <br />
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
                     <div class="list-group">
-                        <!-- Repeater here (not yet fully functional, still in-progress) -->
                         <asp:Repeater id="latestEvents_repeater" runat="server">
                             <ItemTemplate>
-                                <a href="~/Website%20(Front-End)/signup.aspx" class="list-group-item list-group-item-action flex-column align-items-start" runat="server">
+                                <a href="~/Website%20(Back-End)/LatestEventEdit.aspx" class="list-group-item list-group-item-action flex-column align-items-start" runat="server">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="mb-1"><%#Eval("EventTitle")%></h5>
                                         <small><%#Eval("DateAdded")%></small>
                                     </div>
-                                    <p class="mb-1"><%#Eval("EventDetails")%></p>
+                                    <p class="mb-1"><%#Eval("EventDetails")%><small style="visibility: hidden;"><%#Eval("ID")%></small></p>
                                     <small>Click for more details.</small>
                                 </a>
                             </ItemTemplate>
@@ -111,7 +110,7 @@
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
                     <asp:Repeater id="news_repeater" runat="server">
                         <ItemTemplate>
-                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <a href="~/Website%20(Back-End)/NewsEdit.aspx" class="list-group-item list-group-item-action flex-column align-items-start">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1"><%#Eval("NewsTitle")%></h5>
                                     <small><%#Eval("DateAdded")%></small>

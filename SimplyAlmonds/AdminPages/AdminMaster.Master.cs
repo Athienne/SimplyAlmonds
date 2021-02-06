@@ -76,5 +76,10 @@ namespace SimplyAlmonds.AdminPages
             admin.Visible = true; // admin login link button
 
         }
+
+        protected void account_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

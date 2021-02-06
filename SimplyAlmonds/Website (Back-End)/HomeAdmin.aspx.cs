@@ -35,7 +35,7 @@ namespace SimplyAlmonds.Website_Back_End_
             objConn.Open();
 
             // Intial load of Latest Events and News
-            strSQL = "SELECT EventTitle, EventDetails, DateAdded FROM table_LatestEvents";
+            strSQL = "SELECT * FROM table_LatestEvents";
 
             OleDbDataReader dtReader;
             objCmd = new OleDbCommand(strSQL, objConn);
@@ -44,7 +44,7 @@ namespace SimplyAlmonds.Website_Back_End_
             latestEvents_repeater.DataSource = dtReader;
             latestEvents_repeater.DataBind();
 
-            strSQL = "SELECT NewsTitle, NewsDetails, DateAdded FROM table_News";
+            strSQL = "SELECT * FROM table_News";
             objCmd = new OleDbCommand(strSQL, objConn);
             dtReader = objCmd.ExecuteReader();
 
