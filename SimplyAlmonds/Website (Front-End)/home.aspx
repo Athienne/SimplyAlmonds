@@ -42,13 +42,13 @@
                     <br />
                     <br />
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="~/Pictures/asdasdasd.png" runat="server" alt="First slide" />
+                        <img class="d-block w-100" src="~/Pictures/SimplyAlmonds.png" runat="server" alt="First Slide" />
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="~/Pictures/simply almonds.png" runat="server" alt="Second slide" />
+                        <img class="d-block w-100" src="~/Pictures/OutNow.png" runat="server" alt="Second Slide" />
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="~/Pictures/simply almonds223.png" runat="server" alt="Third slide" />
+                        <img class="d-block w-100" src="~/Pictures/FollowUs.png" runat="server" alt="Third Slide" />
                     </div>
                 </div>
             </div>
