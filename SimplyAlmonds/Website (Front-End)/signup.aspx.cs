@@ -32,13 +32,17 @@ namespace SimplyAlmonds.Website__Front_End_
                     OleDbConnection conn = new OleDbConnection(connstr);
                     conn.Open();
                     OleDbCommand cmd = new OleDbCommand("insert into users(username,passw,email,user_type) values('" + uname.Text.Trim() + "' , '" + pass.Text + "','"+email.Text.Trim() + "','user');", conn);
-                    OleDbCommand cmd2 = new OleDbCommand("select * from users where email='" + email.Text.Trim()+"';", conn);
+                    OleDbCommand cmd2 = new OleDbCommand("select * from users where email='" + email.Text.Trim()+"' or username='"+uname.Text.Trim()+"';", conn);
                     OleDbDataReader reader = cmd2.ExecuteReader();
 
                     if (reader.Read() == true)
                     {
-
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('the email you entered is already in the database')", true);
+                        Response.Write(@"
+                         <script>
+                            alert('the email and/or username you entered is already in the database');
+                            
+                        </script>
+                    ");
 
                     }
 
@@ -49,7 +53,12 @@ namespace SimplyAlmonds.Website__Front_End_
                         cmd.ExecuteNonQuery();
 
                         conn.Close();
-                        Response.Redirect("~/Website (Front-End)/home.aspx");
+                        Response.Write(@"
+                         <script>
+                            alert('Sign Up Successful!');
+                            window.location = 'home.aspx';
+                        </script>
+                    ");
                     }
 
                     

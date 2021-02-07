@@ -76,7 +76,12 @@ namespace SimplyAlmonds.UserPages
 
 
             admin.Visible = true; // admin login link button
-
+            Response.Write(@"
+                         <script>
+                            alert('Logged Out Successfully');
+                            window.location = 'home.aspx';
+                        </script>
+                    ");
         }
 
         // view profile
