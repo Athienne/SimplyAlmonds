@@ -51,6 +51,12 @@ namespace SimplyAlmonds.Website__Back_End_
             }
         }
 
+        protected void deleteconfirm_Click(object sender, EventArgs e)
+        {
+            // Invoke Modal for Deletion
+            ClientScript.RegisterStartupScript(this.GetType(), "Popup", "$('#modalDelete').modal('show')", true);
+        }
+
         protected void yes_editlatestevent_Click(object sender, EventArgs e)
         {
             HttpContext con = HttpContext.Current;
@@ -61,9 +67,11 @@ namespace SimplyAlmonds.Website__Back_End_
             objConn.Open();
 
             // Update Event Data
-            strSQL = "UPDATE table_LatestEvents SET EventTitle = '" + editEventTitle_text.Text + "', EventDetails = '" + editEventDetails_text.Text + "', DateAdded = '" + DateTime.Now + "' " +
+            strSQL = "UPDATE table_LatestEvents SET EventTitle = @eventtitle, EventDetails = @eventdetails, DateAdded = '" + DateTime.Now + "' " +
                 "WHERE ID = " + idvalue + ";";
             objCmd = new OleDbCommand(strSQL, objConn);
+            objCmd.Parameters.AddWithValue("@eventtitle", editEventTitle_text.Text);
+            objCmd.Parameters.AddWithValue("@eventdetails", editEventDetails_text.Text);
             objCmd.ExecuteNonQuery();
             objConn.Close();
             Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
@@ -71,7 +79,19 @@ namespace SimplyAlmonds.Website__Back_End_
 
         protected void yes_deletelatestevent_Click(object sender, EventArgs e)
         {
+            HttpContext con = HttpContext.Current;
+            int idvalue = int.Parse(con.Request["id"]);
+            strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
+            Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
+            objConn = new OleDbConnection(strConnString);
+            objConn.Open();
 
+            // Delete Event Data
+            strSQL = "DELETE FROM table_LatestEvents WHERE ID = " + idvalue + "";
+            objCmd = new OleDbCommand(strSQL, objConn);
+            objCmd.ExecuteNonQuery();
+            objConn.Close();
+            Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
         }
     }
 }

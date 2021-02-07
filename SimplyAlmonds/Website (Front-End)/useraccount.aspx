@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="useraccount.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.useraccount" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="UserAccount.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.useraccount" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
@@ -72,6 +72,6 @@
     <h1 class="display-2">Purchase History</h1>
         <div class="auto-style2" style="background-color: #FFFFFF">
             <br />
-        <asp:GridView ID="GridView2" runat="server" Height="393px" HorizontalAlign="Center" Width="842px" Font-Names="Bebas" Font-Overline="False" Font-Size="XX-Large"></asp:GridView>
+        <asp:GridView ID="purchasehistory" runat="server" Height="393px" HorizontalAlign="Center" Width="842px" Font-Names="Bebas" Font-Overline="False" Font-Size="XX-Large"></asp:GridView>
         </div>
 </asp:Content>

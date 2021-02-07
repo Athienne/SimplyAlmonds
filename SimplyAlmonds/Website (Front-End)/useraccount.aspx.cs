@@ -34,8 +34,8 @@ namespace SimplyAlmonds.Website__Front_End_
                     OleDbDataAdapter sqldata2 = new OleDbDataAdapter("select id as [ID], orderID as [Order ID],  proddesc as [Product Description], email as [E-mail], dateofpurchase as [Date of Purchase] from users where username='" + Session["username"] + "';", conn);
                     DataTable table2 = new DataTable();
                     sqldata2.Fill(table2);
-                    purchsehistory.DataSource = table2;
-                    purchsehistory.DataBind();
+                    purchasehistory.DataSource = table2;
+                    purchasehistory.DataBind();
 
                     OleDbDataReader reader = cmd.ExecuteReader();
 

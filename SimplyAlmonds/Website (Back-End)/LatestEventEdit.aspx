@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Edit Event" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="LatestEventEdit.aspx.cs" Inherits="SimplyAlmonds.Website__Back_End_.LatestEventEdit" %>
+﻿<%@ Page Title="Edit Existing Event" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="LatestEventEdit.aspx.cs" Inherits="SimplyAlmonds.Website__Back_End_.LatestEventEdit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
@@ -15,7 +15,7 @@
         .socialmedia_header {
             font-size: 50px;
             font-family: 'Permanent Marker', cursive;
-            align-self: center;
+            align-self: center; 
         }
 
         .socialmedia_item {
@@ -43,7 +43,7 @@
         </div>
         <asp:Button ID="alterconfirm" runat="server" Text="Submit New Event" class="btn btn-primary" OnClick="alterconfirm_Click" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="deleteconfirm" runat="server" Text="Delete This Event" class="btn btn-danger" />
+        <asp:Button ID="deleteconfirm" runat="server" Text="Delete This Event" class="btn btn-danger" OnClick="deleteconfirm_Click" />
         <br />
         <br />
 

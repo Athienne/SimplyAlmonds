@@ -108,12 +108,12 @@
     <Content Include="Website %28Back-End%29\NewsAdd.aspx" />
     <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
     <Content Include="Website %28Front-End%29\Account.aspx" />
-    <Content Include="Website %28Front-End%29\home.aspx" />
-    <Content Include="Website %28Back-End%29\loginadmin.aspx" />
+    <Content Include="Website %28Front-End%29\Home.aspx" />
+    <Content Include="Website %28Back-End%29\LoginAdmin.aspx" />
     <Content Include="Website %28Front-End%29\loginuser.aspx" />
     <Content Include="Website %28Front-End%29\shop.aspx" />
     <Content Include="Website %28Front-End%29\signup.aspx" />
-    <Content Include="Website %28Front-End%29\useraccount.aspx" />
+    <Content Include="Website %28Front-End%29\UserAccount.aspx" />
     <Content Include="AdminPages\AdminMaster.Master" />
     <Content Include="Website %28Back-End%29\HomeAdmin.aspx" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
@@ -251,19 +251,19 @@
     <Compile Include="Website %28Front-End%29\Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Website %28Front-End%29\home.aspx.cs">
-      <DependentUpon>home.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Website %28Front-End%29\home.aspx.designer.cs">
-      <DependentUpon>home.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Website %28Back-End%29\loginadmin.aspx.cs">
-      <DependentUpon>loginadmin.aspx</DependentUpon>
+    <Compile Include="Website %28Back-End%29\LoginAdmin.aspx.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Website %28Back-End%29\loginadmin.aspx.designer.cs">
-      <DependentUpon>loginadmin.aspx</DependentUpon>
+    <Compile Include="Website %28Back-End%29\LoginAdmin.aspx.designer.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\loginuser.aspx.cs">
       <DependentUpon>loginuser.aspx</DependentUpon>
@@ -286,12 +286,12 @@
     <Compile Include="Website %28Front-End%29\signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Website %28Front-End%29\useraccount.aspx.cs">
-      <DependentUpon>useraccount.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\UserAccount.aspx.cs">
+      <DependentUpon>UserAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Website %28Front-End%29\useraccount.aspx.designer.cs">
-      <DependentUpon>useraccount.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\UserAccount.aspx.designer.cs">
+      <DependentUpon>UserAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Back-End%29\HomeAdmin.aspx.cs">
       <DependentUpon>HomeAdmin.aspx</DependentUpon>

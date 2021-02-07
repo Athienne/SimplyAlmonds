@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Simply Almonds" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.home" %>
+﻿<%@ Page Title="Simply Almonds" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.home" MaintainScrollPositionOnPostback="true" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
@@ -62,9 +63,9 @@
                 <br />
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
                     <div class="list-group">
-                        <asp:Repeater id="latestEvents_repeater" runat="server">
+                        <asp:Repeater ID="latestEvents_repeater" runat="server">
                             <ItemTemplate>
-                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <a href="?" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="mb-1"><%#Eval("EventTitle")%></h5>
                                         <small><%#Eval("DateAdded")%></small>
@@ -86,9 +87,9 @@
                 <hr />
                 <br />
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
-                    <asp:Repeater id="news_repeater" runat="server">
+                    <asp:Repeater ID="news_repeater" runat="server">
                         <ItemTemplate>
-                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <a href="?" class="list-group-item list-group-item-action flex-column align-items-start">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1"><%#Eval("NewsTitle")%></h5>
                                     <small><%#Eval("DateAdded")%></small>

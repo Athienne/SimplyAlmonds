@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="accountadmin.aspx.cs" Inherits="SimplyAlmonds.Website__Back_End_.accountadmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="AccountAdmin.aspx.cs" Inherits="SimplyAlmonds.Website__Back_End_.accountadmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />

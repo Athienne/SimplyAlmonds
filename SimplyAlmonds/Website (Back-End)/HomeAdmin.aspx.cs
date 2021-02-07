@@ -99,44 +99,10 @@ namespace SimplyAlmonds.Website_Back_End_
             Response.Redirect("~/Website%20(Back-End)/LatestEventAdd.aspx");
         }
 
-        protected void editLatestEvents_Click(object sender, EventArgs e)
-        {
-            // Test
-            Response.Write("<script>alert('editlatestevents button works!')</script>");
-
-            // Code for editing latest events
-            //
-            //
-            //
-        }
-
-        protected void deleteLatestEvents_Click(object sender, EventArgs e)
-        {
-            // Test
-            Response.Write("<script>alert('deletelatestevents button works!')</script>");
-
-            // Code for delete latest events
-            //
-            //
-            //
-        }
-
         protected void addNews_Click(object sender, EventArgs e)
         {
-            // Test
-            Response.Write("<script>alert('addnews button works!')</script>");
-        }
-
-        protected void editNews_Click(object sender, EventArgs e)
-        {
-            // Test
-            Response.Write("<script>alert('editnews button works!')</script>");
-        }
-
-        protected void deleteNews_Click(object sender, EventArgs e)
-        {
-            // Test
-            Response.Write("<script>alert('deletenews button works!')</script>");
+            // Go to NewsAddPage
+            Response.Redirect("~/Website%20(Back-End)/NewsAdd.aspx");
         }
     }
 }

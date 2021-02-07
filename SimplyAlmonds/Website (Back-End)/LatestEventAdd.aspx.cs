@@ -34,8 +34,10 @@ namespace SimplyAlmonds.Website__Back_End_
             objConn.Open();
 
             strSQL = "INSERT INTO table_LatestEvents (EventTitle, EventDetails, DateAdded) " +
-                "VALUES ('" + EventTitle_text.Text + "', '" + EventDetails_text.Text + "', '" + DateTime.Now + "')";
+                "VALUES (@eventtitle, @eventdetails, '" + DateTime.Now + "')";
             objCmd = new OleDbCommand(strSQL, objConn);
+            objCmd.Parameters.AddWithValue("@eventtitle", EventTitle_text.Text);
+            objCmd.Parameters.AddWithValue("@eventdetails", EventDetails_text.Text);
             objCmd.ExecuteNonQuery();
             objConn.Close();
             Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");

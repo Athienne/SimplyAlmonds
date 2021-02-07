@@ -11,7 +11,7 @@ namespace SimplyAlmonds.Website__Back_End_
 {
 
 
-    public partial class AccountAdmin
+    public partial class accountadmin
     {
 
         /// <summary>
