@@ -76,9 +76,13 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Pictures\BandHeader.png" />
+    <Content Include="Pictures\BandText.png" />
     <Content Include="Pictures\FollowUs.png" />
+    <Content Include="Pictures\NewSingle.png" />
     <Content Include="Pictures\OutNow.png" />
     <Content Include="Pictures\SimplyAlmonds.png" />
+    <Content Include="Pictures\Water_Lilies.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -107,6 +111,7 @@
     <Content Include="Website %28Back-End%29\LatestEventEdit.aspx" />
     <Content Include="Website %28Back-End%29\NewsAdd.aspx" />
     <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
+    <Content Include="Website %28Back-End%29\ProductAdd.aspx" />
     <Content Include="Website %28Front-End%29\Account.aspx" />
     <Content Include="Website %28Front-End%29\Home.aspx" />
     <Content Include="Website %28Back-End%29\LoginAdmin.aspx" />
@@ -243,6 +248,13 @@
     </Compile>
     <Compile Include="Website %28Back-End%29\NewsEdit.aspx.designer.cs">
       <DependentUpon>NewsEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\ProductAdd.aspx.cs">
+      <DependentUpon>ProductAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\ProductAdd.aspx.designer.cs">
+      <DependentUpon>ProductAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\Account.aspx.cs">
       <DependentUpon>Account.aspx</DependentUpon>

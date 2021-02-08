@@ -37,10 +37,10 @@
             background-color: #555;
         }
 
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -53,125 +53,31 @@
 
                 <div class="container-fluid">
                     <div class="row flex-row flex-nowrap" style="overflow-x: scroll;">
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <asp:Repeater ID="TicketRepeater" runat="server">
+                            <ItemTemplate>
+                                <div class="col-sm-3">
+                                    <div class="card-deck h-100">
+                                        <div class="card" style="width: 18rem;">
+                                            <h5 class="card-header"><%#Eval("ProductName")%></h5>
+                                            <div class="card-body h-100 d-flex flex-column">
+
+                                                <p class="card-text">
+                                                    <%#Eval("ProductDescription")%>
+                                                </p>
+
+                                                <a href="#" class="btn btn-primary mt-auto">Add to cart</a>
+
+                                            </div>
+                                            <div class="card-footer text-muted">
+                                                Stock on Hand: <%#Eval("StockOnHand")%>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </div>
                 </div>
-
-
             </div>
         </div>
 
@@ -180,131 +86,36 @@
             <div class="jumbotron" style="background-color: #d3b0ff">
                 <h1 class="heading_characteristics">SINGLES</h1>
                 <hr />
-
                 <div class="container-fluid">
                     <div class="row flex-row flex-nowrap" style="overflow-x: scroll;">
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <asp:Repeater ID="SingleRepeater" runat="server">
+                            <ItemTemplate>
+                                <div class="col-sm-3">
+                                    <div class="card-deck h-100">
+                                        <div class="card" style="width: 18rem;">
+                                            <img class="card-img-top" src=<%#Eval("ImageUrl")%> runat="server" alt="Card image cap">
+                                            <div class="card-body h-100 d-flex flex-column">
+                                                <h5 class="card-title"><%#Eval("ProductName")%></h5>
+                                                <p class="card-text"><%#Eval("ProductDescription")%></p>
+                                                <a href="#" class="btn btn-primary mt-auto">Add to cart</a>
+                                            </div>
+                                            <div class="card-footer text-muted">
+                                                Stock on Hand: <%#Eval("StockOnHand")%>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="card-deck">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
 
                     </div>
                 </div>
 
 
             </div>
-
         </div>
+
+
     </div>
 
 </asp:Content>
