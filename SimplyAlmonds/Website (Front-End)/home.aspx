@@ -58,7 +58,7 @@
 
             <!--Latest Events-->
             <div class="jumbotron" style="background-color: #d3b0ff">
-                <h1 class="heading_characteristics">LATEST EVENTS</h1>
+                <h1 class="heading_characteristics" style="text-align: center; background-color: #cd83ff; border-radius: 25px">LATEST EVENTS</h1>
                 <hr />
                 <br />
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
@@ -83,7 +83,7 @@
             <br />
             <!--News-->
             <div class="jumbotron" style="background-color: #d3b0ff">
-                <h1 class="heading_characteristics">NEWS</h1>
+                <h1 class="heading_characteristics" style="text-align: center; background-color: #cd83ff; border-radius: 25px">NEWS</h1>
                 <hr />
                 <br />
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
@@ -107,26 +107,32 @@
         <br />
 
         <div class="container">
-            <div class="row">
-                <br />
-                <!-- Embed Facebook -->
-                <div class="socialmedia_item col-4">
-                    <h1 class="socialmedia_header">FACEBOOK</h1>
-                    <div class="fb-page" data-href="https://www.facebook.com/SimplyAlmonds/"
-                        data-tabs="timeline" data-width="" data-height="" data-small-header="false"
-                        data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                        <blockquote cite="https://www.facebook.com/SimplyAlmonds/" class="fb-xfbml-parse-ignore">
-                            <a href="https://www.facebook.com/SimplyAlmonds/">Simply Almonds</a>
-                        </blockquote>
+            <div class="jumbotron" style="background-color: #d3b0ff">
+                <div class="row">
+                    <br />
+                    <!-- Embed Facebook -->
+                    <div class="socialmedia_item col-6">
+                        <h1 class="socialmedia_header" style="text-align: center; background-color: #cd83ff; width: 340px; border-radius: 25px">FACEBOOK</h1>
+                        <div style="text-align: center">
+                            <div class="fb-page" data-href="https://www.facebook.com/SimplyAlmonds/"
+                                data-tabs="timeline" data-width="" data-height="" data-small-header="false"
+                                data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                <blockquote cite="https://www.facebook.com/SimplyAlmonds/" class="fb-xfbml-parse-ignore">
+                                    <a href="https://www.facebook.com/SimplyAlmonds/">Simply Almonds</a>
+                                </blockquote>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- Embed Twitter -->
-                <div class="socialmedia_item col-4">
-                    <h1 class="socialmedia_header">TWITTER</h1>
-                    <a class="twitter-timeline" data-width="350" data-height="500" href="https://twitter.com/SimplyAlmonds?ref_src=twsrc%5Etfw">Tweets by SimplyAlmonds</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-                <!-- Embed Instagram (not yet fully functional, still in-progress) -->
+                    <!-- Embed Twitter -->
+                    <div class="socialmedia_item col-6">
+                        <h1 class="socialmedia_header" style="text-align: center; background-color: #cd83ff; width: 340px; border-radius: 25px">TWITTER</h1>
+                        <div style="align-self: center;">
+                            <a class="twitter-timeline" data-width="350" data-height="500" href="https://twitter.com/SimplyAlmonds?ref_src=twsrc%5Etfw">Tweets by SimplyAlmonds</a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                    </div>
+                    <!-- Embed Instagram (not yet fully functional, still in-progress) -->
+                    <!--
                 <div class="socialmedia_item col-4">
                     <h1 class="socialmedia_header">INSTAGRAM</h1>
                     <div class="fb-page" data-href="https://www.facebook.com/SimplyAlmonds/"
@@ -137,7 +143,10 @@
                         </blockquote>
                     </div>
                 </div>
+                -->
+                </div>
             </div>
+
         </div>
 
         <br />

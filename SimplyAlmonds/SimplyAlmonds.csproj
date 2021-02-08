@@ -110,7 +110,7 @@
     <Content Include="Website %28Front-End%29\Account.aspx" />
     <Content Include="Website %28Front-End%29\Home.aspx" />
     <Content Include="Website %28Back-End%29\LoginAdmin.aspx" />
-    <Content Include="Website %28Front-End%29\loginuser.aspx" />
+    <Content Include="Website %28Front-End%29\LoginUser.aspx" />
     <Content Include="Website %28Front-End%29\shop.aspx" />
     <Content Include="Website %28Front-End%29\signup.aspx" />
     <Content Include="Website %28Front-End%29\UserAccount.aspx" />
@@ -265,12 +265,12 @@
     <Compile Include="Website %28Back-End%29\LoginAdmin.aspx.designer.cs">
       <DependentUpon>LoginAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Website %28Front-End%29\loginuser.aspx.cs">
-      <DependentUpon>loginuser.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\LoginUser.aspx.cs">
+      <DependentUpon>LoginUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Website %28Front-End%29\loginuser.aspx.designer.cs">
-      <DependentUpon>loginuser.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\LoginUser.aspx.designer.cs">
+      <DependentUpon>LoginUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\shop.aspx.cs">
       <DependentUpon>shop.aspx</DependentUpon>
