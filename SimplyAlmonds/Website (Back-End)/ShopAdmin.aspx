@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="shop.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.Shop" %>
+﻿<%@ Page Title="Shop" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="ShopAdmin.aspx.cs" Inherits="SimplyAlmonds.Website__Back_End_.ShopAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
@@ -56,23 +56,22 @@
                         <asp:Repeater ID="TicketRepeater" runat="server">
                             <ItemTemplate>
                                 <div class="col-sm-3">
-                                    <div class="card-deck h-100">
-                                        <div class="card" style="width: 18rem;">
-                                            <h5 class="card-header"><%#Eval("ProductName")%></h5>
-                                            <div class="card-body h-100 d-flex flex-column">
-
-                                                <p class="card-text">
-                                                    <%#Eval("ProductDescription")%>
-                                                </p>
-
-                                                <a href="#" class="btn btn-primary mt-auto">Add to cart</a>
-
-                                            </div>
-                                            <div class="card-footer text-muted">
-                                                Stock on Hand: <%#Eval("StockOnHand")%>
+                                    <a href="/Website%20(Back-End)/ProductEdit.aspx?id=<%#Eval("ShopID")%>">
+                                        <div class="card-deck h-100">
+                                            <div class="card" style="width: 18rem;">
+                                                <h5 class="card-header"><%#Eval("ProductName")%></h5>
+                                                <div class="card-body h-100 d-flex flex-column">
+                                                    <p class="card-text">
+                                                        <%#Eval("ProductDescription")%>
+                                                    </p>
+                                                    <a href="#" class="btn btn-primary mt-auto">Add to cart</a>
+                                                </div>
+                                                <div class="card-footer text-muted">
+                                                    Stock on Hand: <%#Eval("StockOnHand")%>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -91,19 +90,21 @@
                         <asp:Repeater ID="SingleRepeater" runat="server">
                             <ItemTemplate>
                                 <div class="col-sm-3">
-                                    <div class="card-deck h-100">
-                                        <div class="card" style="width: 18rem;">
-                                            <img class="card-img-top" src=<%#Eval("ImageUrl")%> runat="server" alt="Card image cap">
-                                            <div class="card-body h-100 d-flex flex-column">
-                                                <h5 class="card-title"><%#Eval("ProductName")%></h5>
-                                                <p class="card-text"><%#Eval("ProductDescription")%></p>
-                                                <a href="#" class="btn btn-primary mt-auto">Add to cart</a>
-                                            </div>
-                                            <div class="card-footer text-muted">
-                                                Stock on Hand: <%#Eval("StockOnHand")%>
+                                    <a href="/Website%20(Back-End)/ProductEdit.aspx?id=<%#Eval("ShopID")%>">
+                                        <div class="card-deck h-100">
+                                            <div class="card" style="width: 18rem;">
+                                                <img class="card-img-top" src='<%#Eval("ImageUrl")%>' runat="server" alt="Card image cap">
+                                                <div class="card-body h-100 d-flex flex-column">
+                                                    <h5 class="card-title"><%#Eval("ProductName")%></h5>
+                                                    <p class="card-text"><%#Eval("ProductDescription")%></p>
+                                                    <a href="#" class="btn btn-primary mt-auto">Add to cart</a>
+                                                </div>
+                                                <div class="card-footer text-muted">
+                                                    Stock on Hand: <%#Eval("StockOnHand")%>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -111,11 +112,7 @@
                     </div>
                 </div>
 
-
             </div>
         </div>
-
-
     </div>
-
 </asp:Content>

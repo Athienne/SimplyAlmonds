@@ -6,9 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.OleDb;
 
-namespace SimplyAlmonds.Website__Front_End_
+namespace SimplyAlmonds.Website__Back_End_
 {
-    public partial class Shop : System.Web.UI.Page
+    public partial class ShopAdmin : System.Web.UI.Page
     {
         OleDbConnection objConn;
         OleDbCommand objCmd;

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SimplyAlmonds.Website__Front_End_
+namespace SimplyAlmonds.Website__Back_End_
 {
 
 
-    public partial class Shop
+    public partial class ShopAdmin
     {
 
         /// <summary>

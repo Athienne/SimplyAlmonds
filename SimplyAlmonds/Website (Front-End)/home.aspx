@@ -58,7 +58,7 @@
 
             <!--Latest Events-->
             <div class="jumbotron" style="background-color: #d3b0ff">
-                <h1 class="heading_characteristics" style="text-align: center; background-color: #cd83ff; border-radius: 25px">LATEST EVENTS</h1>
+                <h1 class="heading_characteristics" style="text-align: center; background-color: #44f9ff; border-radius: 25px; border: 5px solid #cd83ff">LATEST EVENTS</h1>
                 <hr />
                 <br />
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
@@ -83,7 +83,7 @@
             <br />
             <!--News-->
             <div class="jumbotron" style="background-color: #d3b0ff">
-                <h1 class="heading_characteristics" style="text-align: center; background-color: #cd83ff; border-radius: 25px">NEWS</h1>
+                <h1 class="heading_characteristics" style="text-align: center; background-color: #44f9ff; border-radius: 25px; border: 5px solid #cd83ff">NEWS</h1>
                 <hr />
                 <br />
                 <div class="list-group" style="overflow-y: scroll; max-height: 300px;">
@@ -97,6 +97,7 @@
                                 <p class="mb-1"><%#Eval("NewsDetails")%></p>
                                 <small>Click for more details.</small>
                             </a>
+                            <br />
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
@@ -112,7 +113,8 @@
                     <br />
                     <!-- Embed Facebook -->
                     <div class="socialmedia_item col-6">
-                        <h1 class="socialmedia_header" style="text-align: center; background-color: #cd83ff; width: 340px; border-radius: 25px">FACEBOOK</h1>
+                        <h1 class="socialmedia_header" style="text-align: center; background-color: #44f9ff; width: 340px; border-radius: 25px; border: 5px solid #cd83ff;">FACEBOOK</h1>
+                        <br />
                         <div style="text-align: center">
                             <div class="fb-page" data-href="https://www.facebook.com/SimplyAlmonds/"
                                 data-tabs="timeline" data-width="" data-height="" data-small-header="false"
@@ -125,7 +127,8 @@
                     </div>
                     <!-- Embed Twitter -->
                     <div class="socialmedia_item col-6">
-                        <h1 class="socialmedia_header" style="text-align: center; background-color: #cd83ff; width: 340px; border-radius: 25px">TWITTER</h1>
+                        <h1 class="socialmedia_header" style="text-align: center; background-color: #44f9ff; width: 340px; border-radius: 25px; border: 5px solid #cd83ff;">TWITTER</h1>
+                        <br />
                         <div style="align-self: center;">
                             <a class="twitter-timeline" data-width="350" data-height="500" href="https://twitter.com/SimplyAlmonds?ref_src=twsrc%5Etfw">Tweets by SimplyAlmonds</a>
                             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
