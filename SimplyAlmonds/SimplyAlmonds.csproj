@@ -111,12 +111,15 @@
     <Content Include="Website %28Back-End%29\LatestEventEdit.aspx" />
     <Content Include="Website %28Back-End%29\NewsAdd.aspx" />
     <Content Include="Website %28Back-End%29\NewsEdit.aspx" />
+    <Content Include="Website %28Back-End%29\OrderRequests.aspx" />
     <Content Include="Website %28Back-End%29\ProductAdd.aspx" />
+    <Content Include="Website %28Back-End%29\ProductEdit.aspx" />
+    <Content Include="Website %28Back-End%29\ShopAdmin.aspx" />
     <Content Include="Website %28Front-End%29\Account.aspx" />
     <Content Include="Website %28Front-End%29\Home.aspx" />
     <Content Include="Website %28Back-End%29\LoginAdmin.aspx" />
-    <Content Include="Website %28Front-End%29\loginuser.aspx" />
-    <Content Include="Website %28Front-End%29\shop.aspx" />
+    <Content Include="Website %28Front-End%29\LoginUser.aspx" />
+    <Content Include="Website %28Front-End%29\Shop.aspx" />
     <Content Include="Website %28Front-End%29\signup.aspx" />
     <Content Include="Website %28Front-End%29\UserAccount.aspx" />
     <Content Include="AdminPages\AdminMaster.Master" />
@@ -249,12 +252,33 @@
     <Compile Include="Website %28Back-End%29\NewsEdit.aspx.designer.cs">
       <DependentUpon>NewsEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Website %28Back-End%29\OrderRequests.aspx.cs">
+      <DependentUpon>OrderRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\OrderRequests.aspx.designer.cs">
+      <DependentUpon>OrderRequests.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Website %28Back-End%29\ProductAdd.aspx.cs">
       <DependentUpon>ProductAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Website %28Back-End%29\ProductAdd.aspx.designer.cs">
       <DependentUpon>ProductAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\ProductEdit.aspx.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\ProductEdit.aspx.designer.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\ShopAdmin.aspx.cs">
+      <DependentUpon>ShopAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\ShopAdmin.aspx.designer.cs">
+      <DependentUpon>ShopAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\Account.aspx.cs">
       <DependentUpon>Account.aspx</DependentUpon>
@@ -277,19 +301,19 @@
     <Compile Include="Website %28Back-End%29\LoginAdmin.aspx.designer.cs">
       <DependentUpon>LoginAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Website %28Front-End%29\loginuser.aspx.cs">
-      <DependentUpon>loginuser.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\LoginUser.aspx.cs">
+      <DependentUpon>LoginUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Website %28Front-End%29\loginuser.aspx.designer.cs">
-      <DependentUpon>loginuser.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\LoginUser.aspx.designer.cs">
+      <DependentUpon>LoginUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Website %28Front-End%29\shop.aspx.cs">
-      <DependentUpon>shop.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\Shop.aspx.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Website %28Front-End%29\shop.aspx.designer.cs">
-      <DependentUpon>shop.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\Shop.aspx.designer.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>

@@ -1,5 +1,4 @@
-﻿<%@ Page Title="Add New Product" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="ProductAdd.aspx.cs" Inherits="SimplyAlmonds.Website__Back_End_.ProductAdd" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="ProductEdit.aspx.cs" Inherits="SimplyAlmonds.Website__Back_End_.ProductEdit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
@@ -25,10 +24,9 @@
         }
     </style>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-        <h1 class="heading_characteristics" style="text-align: center;">ADD A NEW SINGLE</h1>
+        <h1 class="heading_characteristics" style="text-align: center;">EDIT EXISTING PRODUCT</h1>
         <div class="form-group">
             <label for="ProductName_text">Product Name</label>
             <asp:TextBox runat="server" class="form-control" ID="ProductName_text" aria-describedby="emailHelp" placeholder="Product Name (e.g. Simply Almonds Manila Tour)"></asp:TextBox>
@@ -66,7 +64,8 @@
         <div>
             <p style="font-style: oblique;"><small>NOTE: All fields must be filled.</small></p>
         </div>
-        <asp:Button ID="addNewProduct" runat="server" Text="Submit New Product" class="btn btn-primary" OnClick="checkModal_click" />
+        <asp:Button ID="addNewProduct" runat="server" Text="Submit Edited Product" class="btn btn-primary" OnClick="checkModal_click" />
+        <asp:Button ID="deleteProduct" runat="server" Text="Delete This Product" class="btn btn-danger" OnClick="deleteModal_click" />
         <br />
         <br />
 
@@ -84,12 +83,31 @@
                         Are you sure about these changes?
                     </div>
                     <div class="modal-footer">
-                        <asp:Button type="button" id="yes" class="btn btn-primary" runat="server" Text="Yes" OnClick="addProduct_click"/>
+                        <asp:Button type="button" id="yes" class="btn btn-primary" runat="server" Text="Yes" OnClick="editProduct_click"/>
                         <asp:Button type="button" ID="no" class="btn btn-secondary" runat="server" data-dismiss="modal" Text="No"/>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Delete this product from the inventory?
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button type="button" id="del_yes" class="btn btn-primary" runat="server" Text="Yes" OnClick="deleteProduct_click"/>
+                        <asp:Button type="button" ID="del_no" class="btn btn-secondary" runat="server" data-dismiss="modal" Text="No"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
