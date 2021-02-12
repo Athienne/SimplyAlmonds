@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="shop.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="shop.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.shop" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
@@ -41,6 +41,12 @@
             ::-webkit-scrollbar-thumb:hover {
                 background: #555;
             }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -65,6 +71,14 @@
                                                     <%#Eval("ProductDescription")%>
                                                 </p>
 
+                                                <label for="Quantity">Quantity</label>
+
+                                                <div class="input-group sm-3">
+                                                    <asp:Button ID="minusButton" runat="server" Text="-" class="btn btn-outline-dark" OnClick="minus_Click" />
+                                                    <asp:TextBox ID="quantityTxt" runat="server" TextMode="Number" min="1" max=<%#Eval("StockOnHand")%> Text="1" class="col-sm-4" style="text-align: center"></asp:TextBox>
+                                                    <asp:Button ID="plusButton" runat="server" Text="+" class="btn btn-outline-dark" OnClick="plus_Click" CommandArgument=<%#Eval("StockOnHand")%> />
+                                                </div>
+                                                <br />
                                                 <a href="#" class="btn btn-primary mt-auto">Add to cart</a>
 
                                             </div>
@@ -93,7 +107,7 @@
                                 <div class="col-sm-3">
                                     <div class="card-deck h-100">
                                         <div class="card" style="width: 18rem;">
-                                            <img class="card-img-top" src=<%#Eval("ImageUrl")%> runat="server" alt="Card image cap">
+                                            <img class="card-img-top" src='<%#Eval("ImageUrl")%>' runat="server" alt="Card image cap">
                                             <div class="card-body h-100 d-flex flex-column">
                                                 <h5 class="card-title"><%#Eval("ProductName")%></h5>
                                                 <p class="card-text"><%#Eval("ProductDescription")%></p>
@@ -112,6 +126,27 @@
                 </div>
 
 
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><%#Eval("ProductName")%></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <%#Eval("ProductDescription")%>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
             </div>
         </div>
 

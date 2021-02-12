@@ -11,7 +11,7 @@ namespace SimplyAlmonds.Website__Front_End_
 {
 
 
-    public partial class WebForm1
+    public partial class shop
     {
 
         /// <summary>
