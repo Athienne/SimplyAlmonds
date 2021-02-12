@@ -97,7 +97,7 @@
                                                 <div class="card-body h-100 d-flex flex-column">
                                                     <h5 class="card-title"><%#Eval("ProductName")%></h5>
                                                     <p class="card-text"><%#Eval("ProductDescription")%></p>
-                                                    <a href="#" class="btn btn-primary mt-auto">Add to cart</a>
+                                                    
                                                 </div>
                                                 <div class="card-footer text-muted">
                                                     Stock on Hand: <%#Eval("StockOnHand")%>

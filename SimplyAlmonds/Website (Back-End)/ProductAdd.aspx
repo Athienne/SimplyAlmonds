@@ -60,7 +60,7 @@
                 <div class="col-5">
                     <label for="ProductDescription_text">Product Price</label>
                     <asp:TextBox runat="server" class="form-control w-25" ID="ProductPrice_Text" aria-describedby="productPrice" placeholder="Price"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="ProductPrice_validator" runat="server" ErrorMessage="Stock On Hand is required. ( * )" ControlToValidate="ProductPrice_Text" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="ProductPrice_validator" runat="server" ErrorMessage="Product Price is required. ( * )" ControlToValidate="ProductPrice_Text" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Product Price must be a number. ( * )" Type="Currency" ControlToValidate="ProductPrice_Text" Font-Italic="True" Operator="DataTypeCheck"></asp:CompareValidator>
                 </div>
 

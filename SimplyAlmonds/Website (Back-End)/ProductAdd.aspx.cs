@@ -51,17 +51,18 @@ namespace SimplyAlmonds.Website__Back_End_
                 FileUpload1.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
 
                 strSQL = "insert into Shop (ProductName, ProductDescription, StockOnHand, ProductType, ImageUrl) " +
-                    $"values(@Name, @Description, @Stock, @Type, '{"~/Pictures/" + Path.GetFileName(FileUpload1.FileName)}')";
+                    $"values(@Name, @Description, @Price, @Stock, @Type, '{"~/Pictures/" + Path.GetFileName(FileUpload1.FileName)}')";
             }
             else
             {
                 strSQL = $"insert into Shop (ProductName, ProductDescription, StockOnHand, ProductType) " +
-                    "values(@Name, @Description, @Stock, @Type)";
+                    "values(@Name, @Description, @Price, @Stock, @Type)";
             }
 
             objCmd = new OleDbCommand(strSQL, objConn);
             objCmd.Parameters.AddWithValue("@Name", ProductName_text.Text);
             objCmd.Parameters.AddWithValue("@Description", ProductDescription_text.Text);
+            objCmd.Parameters.AddWithValue("@Price", double.Parse(ProductPrice_Text.Text));
             objCmd.Parameters.AddWithValue("@Stock", int.Parse(Stock_text.Text));
             objCmd.Parameters.AddWithValue("@Type", ProductList.SelectedValue);
 

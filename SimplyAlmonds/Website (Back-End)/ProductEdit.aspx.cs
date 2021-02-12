@@ -41,22 +41,25 @@ namespace SimplyAlmonds.Website__Back_End_
                 objConn.Open();
 
                 // Load Event Data
-                strSQL = "SELECT ProductName, ProductDescription, StockOnHand, ProductType FROM Shop WHERE ShopID = " + idvalue + "";
+                strSQL = "SELECT ProductName, ProductDescription, ProductPrice, StockOnHand, ProductType FROM Shop WHERE ShopID = " + idvalue + "";
                 objCmd = new OleDbCommand(strSQL, objConn);
                 OleDbDataReader reader = objCmd.ExecuteReader();
 
-                // Value holder for Stock (reader code does not work)
+                // Value holder for Stock and Product Price(reader code does not work)
                 int stockValueHolder = 0;
+                double productPriceHolder = 0;
 
                 while (reader.Read())
                 {
                     ProductName_text.Text = reader.GetString(0);
                     ProductDescription_text.Text = reader.GetString(1);
-                    stockValueHolder = reader.GetInt32(2);
-                    ProductList.SelectedValue = reader.GetString(3);
+                    productPriceHolder = reader.GetDouble(2);
+                    stockValueHolder = reader.GetInt32(3);
+                    ProductList.SelectedValue = reader.GetString(4);
                 }
 
                 Stock_text.Text = stockValueHolder.ToString();
+                ProductPrice_Text.Text = productPriceHolder.ToString();
 
                 if (ProductList.SelectedValue == "Single")
                 {
@@ -101,18 +104,19 @@ namespace SimplyAlmonds.Website__Back_End_
                 string folderPath = Server.MapPath("~/Pictures/");
                 FileUpload1.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
 
-                strSQL = "UPDATE Shop SET ProductName = @prodname, ProductDescription = @proddesc, StockOnHand = @stock, ProductType = @prodtype, " +
+                strSQL = "UPDATE Shop SET ProductName = @prodname, ProductDescription = @proddesc, ProductPrice = @prodprice, StockOnHand = @stock, ProductType = @prodtype, " +
                     $"ImageUrl = '{"~/Pictures/" + Path.GetFileName(FileUpload1.FileName)}' WHERE ShopID = @prodID";
             }
             else
             {
-                strSQL = "UPDATE Shop SET ProductName = @prodname, ProductDescription = @proddesc, StockOnHand = @stock, ProductType = @prodtype, ImageUrl = @ImageUrl" +
+                strSQL = "UPDATE Shop SET ProductName = @prodname, ProductDescription = @proddesc, ProductPrice = @prodprice, StockOnHand = @stock, ProductType = @prodtype, ImageUrl = @ImageUrl" +
                     "WHERE ShopID = @prodID";
             }
 
             objCmd = new OleDbCommand(strSQL, objConn);
             objCmd.Parameters.AddWithValue("@prodname", ProductName_text.Text);
             objCmd.Parameters.AddWithValue("@proddesc", ProductDescription_text.Text);
+            objCmd.Parameters.AddWithValue("@prodprice", double.Parse(ProductPrice_Text.Text));
             objCmd.Parameters.AddWithValue("@stock", int.Parse(Stock_text.Text));
             objCmd.Parameters.AddWithValue("@prodtype", ProductList.SelectedValue);
             objCmd.Parameters.AddWithValue("@prodID", idvalue);

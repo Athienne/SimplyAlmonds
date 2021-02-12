@@ -87,6 +87,33 @@ namespace SimplyAlmonds.Website__Back_End_
         protected global::System.Web.UI.WebControls.DropDownList ProductList;
 
         /// <summary>
+        /// ProductPrice_Text control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ProductPrice_Text;
+
+        /// <summary>
+        /// ProductPrice_validator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ProductPrice_validator;
+
+        /// <summary>
+        /// CompareValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
+
+        /// <summary>
         /// FileUpload1 control.
         /// </summary>
         /// <remarks>
