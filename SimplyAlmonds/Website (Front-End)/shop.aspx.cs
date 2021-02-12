@@ -8,7 +8,7 @@ using System.Data.OleDb;
 
 namespace SimplyAlmonds.Website__Front_End_
 {
-    public partial class shop : System.Web.UI.Page
+    public partial class Shop : System.Web.UI.Page
     {
         OleDbConnection objConn;
         OleDbCommand objCmd;
