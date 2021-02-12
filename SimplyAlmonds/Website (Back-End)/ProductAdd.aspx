@@ -31,7 +31,7 @@
         <h1 class="heading_characteristics" style="text-align: center;">ADD A NEW SINGLE</h1>
         <div class="form-group">
             <label for="ProductName_text">Product Name</label>
-            <asp:TextBox runat="server" class="form-control" ID="ProductName_text" aria-describedby="emailHelp" placeholder="Product Name (e.g. Simply Almonds Manila Tour)"></asp:TextBox>
+            <asp:TextBox runat="server" class="form-control" ID="ProductName_text" aria-describedby="productName" placeholder="Product Name (e.g. Simply Almonds Manila Tour)"></asp:TextBox>
             <asp:RequiredFieldValidator ID="ProductName_validator" runat="server" ErrorMessage="Product Name is required. ( * )" ControlToValidate="ProductName_text" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
         </div>
         <div class="form-group">
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-5">
                     <label for="ProductDescription_text">Stock On Hand</label>
-                    <asp:TextBox runat="server" class="form-control w-25" ID="Stock_text" aria-describedby="emailHelp" placeholder="Stock"></asp:TextBox>
+                    <asp:TextBox runat="server" class="form-control w-25" ID="Stock_text" aria-describedby="productName" placeholder="Stock"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="Stock_validator" runat="server" ErrorMessage="Stock On Hand is required. ( * )" ControlToValidate="Stock_text" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Stock On Hand must be a number. ( * )" Type="Integer" ControlToValidate="Stock_text" Font-Italic="True" Operator="DataTypeCheck"></asp:CompareValidator>
                 </div>
@@ -56,6 +56,14 @@
                         <asp:ListItem Value="Single">Single</asp:ListItem>
                     </asp:DropDownList>
                 </div>
+
+                <div class="col-5">
+                    <label for="ProductDescription_text">Product Price</label>
+                    <asp:TextBox runat="server" class="form-control w-25" ID="ProductPrice_Text" aria-describedby="productPrice" placeholder="Price"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ProductPrice_validator" runat="server" ErrorMessage="Stock On Hand is required. ( * )" ControlToValidate="ProductPrice_Text" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Product Price must be a number. ( * )" Type="Currency" ControlToValidate="ProductPrice_Text" Font-Italic="True" Operator="DataTypeCheck"></asp:CompareValidator>
+                </div>
+
             </div>
         </div>
 

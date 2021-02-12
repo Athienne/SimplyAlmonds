@@ -116,6 +116,7 @@
     <Content Include="Website %28Back-End%29\ProductEdit.aspx" />
     <Content Include="Website %28Back-End%29\ShopAdmin.aspx" />
     <Content Include="Website %28Front-End%29\Account.aspx" />
+    <Content Include="Website %28Front-End%29\Cart.aspx" />
     <Content Include="Website %28Front-End%29\Home.aspx" />
     <Content Include="Website %28Back-End%29\LoginAdmin.aspx" />
     <Content Include="Website %28Front-End%29\LoginUser.aspx" />
@@ -286,6 +287,13 @@
     </Compile>
     <Compile Include="Website %28Front-End%29\Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
