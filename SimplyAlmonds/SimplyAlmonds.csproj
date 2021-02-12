@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Website %28Back-End%29\BiographyBackEnd.aspx" />
     <Content Include="App_Data\simplyalmonds.mdb" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -76,12 +77,19 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Pictures\ammon.jpg" />
     <Content Include="Pictures\BandHeader.png" />
     <Content Include="Pictures\BandText.png" />
     <Content Include="Pictures\FollowUs.png" />
+    <Content Include="Pictures\jam.jpg" />
+    <Content Include="Pictures\jedi.jpg" />
+    <Content Include="Pictures\mark.jpg" />
+    <Content Include="Pictures\mchance.jpg" />
     <Content Include="Pictures\NewSingle.png" />
     <Content Include="Pictures\OutNow.png" />
+    <Content Include="Pictures\pristine.jpg" />
     <Content Include="Pictures\SimplyAlmonds.png" />
+    <Content Include="Pictures\sremedy.jpg" />
     <Content Include="Pictures\Water_Lilies.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -209,6 +217,13 @@
     </Compile>
     <Compile Include="AdminPages\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\BiographyBackEnd.aspx.cs">
+      <DependentUpon>BiographyBackEnd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\BiographyBackEnd.aspx.designer.cs">
+      <DependentUpon>BiographyBackEnd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserPages\MasterUser.Master.cs">
