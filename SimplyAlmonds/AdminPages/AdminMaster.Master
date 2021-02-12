@@ -34,7 +34,10 @@
                         <a class="nav-link" href="ShopAdmin.aspx">Shop</a>
                      </li>
                      <li class="nav-item active">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="BiographyBackEnd.aspx">About Us</a>
+                     </li>
+                      <li class="nav-item active">
+                        <a class="nav-link" href="DiscographyBackEnd.aspx">Discography</a>
                      </li>
                      <li class="nav-item active">
                         <a class="nav-link" href="#">Terms</a>

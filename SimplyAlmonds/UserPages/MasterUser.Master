@@ -30,10 +30,10 @@
                         <a class="nav-link" href="home.aspx">Home</a>
                      </li>
                      <li class="nav-item active">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="Biography.aspx">About Us</a>
                      </li>
                      <li class="nav-item active">
-                        <a class="nav-link" href="#">Discography</a>
+                        <a class="nav-link" href="Discography.aspx">Discography</a>
                      </li>
                      <li class="nav-item active">
                         <a class="nav-link" href="shop.aspx">Shop</a>
