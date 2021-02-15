@@ -89,6 +89,8 @@
     <Content Include="Pictures\jedi.jpg" />
     <Content Include="Pictures\mark.jpg" />
     <Content Include="Pictures\mchance.jpg" />
+
+    <Content Include="Pictures\Hey Barbara Font.jpg" />
     <Content Include="Pictures\NewSingle.png" />
     <Content Include="Pictures\OutNow.png" />
     <Content Include="Pictures\pristine.jpg" />
