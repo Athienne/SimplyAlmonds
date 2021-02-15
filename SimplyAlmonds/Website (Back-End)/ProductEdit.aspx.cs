@@ -17,58 +17,76 @@ namespace SimplyAlmonds.Website__Back_End_
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            if (Session["role"] == null)
             {
-                if (Session["UploadedFile"] == null && FileUpload1.HasFile)
-                {
-                    Session["UploadedFile"] = FileUpload1;
-                }
-                else if (Session["UploadedFile"] != null && (!FileUpload1.HasFile))
-                {
-                    FileUpload1 = (FileUpload)Session["UploadedFile"];
-                }
-                else if (FileUpload1.HasFile)
-                {
-                    Session["UploadedFile"] = FileUpload1;
-                }
-
-                HttpContext con = HttpContext.Current;
-                int idvalue = int.Parse(con.Request["id"]);
-
-                strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
-                Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
-                objConn = new OleDbConnection(strConnString);
-                objConn.Open();
-
-                // Load Event Data
-                strSQL = "SELECT ProductName, ProductDescription, ProductPrice, StockOnHand, ProductType FROM Shop WHERE ShopID = " + idvalue + "";
-                objCmd = new OleDbCommand(strSQL, objConn);
-                OleDbDataReader reader = objCmd.ExecuteReader();
-
-                // Value holder for Stock and Product Price(reader code does not work)
-                int stockValueHolder = 0;
-                double productPriceHolder = 0;
-
-                while (reader.Read())
-                {
-                    ProductName_text.Text = reader.GetString(0);
-                    ProductDescription_text.Text = reader.GetString(1);
-                    productPriceHolder = reader.GetDouble(2);
-                    stockValueHolder = reader.GetInt32(3);
-                    ProductList.SelectedValue = reader.GetString(4);
-                }
-
-                Stock_text.Text = stockValueHolder.ToString();
-                ProductPrice_Text.Text = productPriceHolder.ToString();
-
-                if (ProductList.SelectedValue == "Single")
-                {
-                    FileUpload1.Visible = true;
-                }
-
-                reader.Close();
-                objConn.Close();
+                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
             }
+            else if (Session["role"].ToString() == "user")
+            {
+                Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+            }
+            else
+            {
+                if (!Page.IsPostBack)
+                {
+                    if (Session["UploadedFile"] == null && FileUpload1.HasFile)
+                    {
+                        Session["UploadedFile"] = FileUpload1;
+                    }
+                    else if (Session["UploadedFile"] != null && (!FileUpload1.HasFile))
+                    {
+                        FileUpload1 = (FileUpload)Session["UploadedFile"];
+                    }
+                    else if (FileUpload1.HasFile)
+                    {
+                        Session["UploadedFile"] = FileUpload1;
+                    }
+
+                    try
+                    {
+                        HttpContext con = HttpContext.Current;
+                        int idvalue = int.Parse(con.Request["id"]);
+
+                        strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
+                        Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
+                        objConn = new OleDbConnection(strConnString);
+                        objConn.Open();
+
+                        // Load Event Data
+                        strSQL = "SELECT ProductName, ProductDescription, ProductPrice, StockOnHand, ProductType FROM Shop WHERE ShopID = " + idvalue + "";
+                        objCmd = new OleDbCommand(strSQL, objConn);
+                        OleDbDataReader reader = objCmd.ExecuteReader();
+
+                        // Value holder for Stock and Product Price(reader code does not work)
+                        int stockValueHolder = 0;
+                        double productPriceHolder = 0;
+
+                        while (reader.Read())
+                        {
+                            ProductName_text.Text = reader.GetString(0);
+                            ProductDescription_text.Text = reader.GetString(1);
+                            productPriceHolder = reader.GetDouble(2);
+                            stockValueHolder = reader.GetInt32(3);
+                            ProductList.SelectedValue = reader.GetString(4);
+                        }
+
+                        Stock_text.Text = stockValueHolder.ToString();
+                        ProductPrice_Text.Text = productPriceHolder.ToString();
+
+                        if (ProductList.SelectedValue == "Single")
+                        {
+                            FileUpload1.Visible = true;
+                        }
+
+                        reader.Close();
+                        objConn.Close();
+                    }    
+                    catch (Exception)
+                    {
+                        Response.Redirect("~/Website%20(Back-End)/ShopAdmin.aspx");
+                    }
+                }
+            }        
         }
 
         protected void checkModal_click(object sender, EventArgs e)

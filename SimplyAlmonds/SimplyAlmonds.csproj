@@ -132,7 +132,7 @@
     <Content Include="Website %28Back-End%29\LoginAdmin.aspx" />
     <Content Include="Website %28Front-End%29\LoginUser.aspx" />
     <Content Include="Website %28Front-End%29\Shop.aspx" />
-    <Content Include="Website %28Front-End%29\signup.aspx" />
+    <Content Include="Website %28Front-End%29\SignUp.aspx" />
     <Content Include="Website %28Front-End%29\UserAccount.aspx" />
     <Content Include="AdminPages\AdminMaster.Master" />
     <Content Include="Website %28Back-End%29\HomeAdmin.aspx" />
@@ -362,12 +362,12 @@
     <Compile Include="Website %28Front-End%29\Shop.aspx.designer.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Website %28Front-End%29\signup.aspx.cs">
-      <DependentUpon>signup.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Website %28Front-End%29\signup.aspx.designer.cs">
-      <DependentUpon>signup.aspx</DependentUpon>
+    <Compile Include="Website %28Front-End%29\SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\UserAccount.aspx.cs">
       <DependentUpon>UserAccount.aspx</DependentUpon>

@@ -20,7 +20,7 @@
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light">DISCOGRAPHY</h1>
-            <p class="lead text-muted">Simply Almond's Single</p>
+            <p class="lead text-muted">Simply Almonds' Single</p>
           </div>
         </div>
       </section>
@@ -62,7 +62,7 @@
         <tr class="center">
             <td class="text-center">
                 <br /><br />
-                Lyrics
+                Lyrics:
                 <br />
                 <br />
                 <asp:TextBox ID="txtLyrics" runat="server" Text='<%# Eval("songLyrics") %>'  Width="100%" Font-Size="Medium" TextMode="MultiLine" Rows="100"  CssClass="txtLyrics"></asp:TextBox>

@@ -13,7 +13,8 @@
 
     <div class="album py-5 bg-light">
         <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="jumbotron">
+                <div class="g-3">
 
                 <asp:Repeater ID="biographyMembersRepeater" runat="server" DataSourceID="SqlDataSourceBiography">
                 <ItemTemplate>
@@ -47,6 +48,7 @@
 
                 <asp:SqlDataSource ID="SqlDataSourceBiography" runat="server" ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\simplyalmonds.mdb;Persist Security Info=True" ProviderName="System.Data.OleDb" SelectCommand="SELECT * FROM [biography]"></asp:SqlDataSource>
 
+            </div>
             </div>
         </div>
     </div>

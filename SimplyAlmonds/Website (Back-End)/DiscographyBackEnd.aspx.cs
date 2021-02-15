@@ -12,8 +12,16 @@ namespace SimplyAlmonds.AdminPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["role"] == null)
+            {
+                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
+            }
+            else if (Session["role"].ToString() == "user")
+            {
+                Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+            }
         }
+
         protected void bandDiscograhy_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
             FileUpload newfileuploadcontrol = bandDiscograhy.FindControl("FileUploadAddPic") as FileUpload;
