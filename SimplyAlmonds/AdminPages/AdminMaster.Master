@@ -39,7 +39,7 @@
                         <a class="nav-link" href="ShopAdmin.aspx">Shop</a>
                      </li>
                      <li class="nav-item active">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="AboutUs.aspx">About Us</a>
                      </li>
                   </ul>
                   <ul class="navbar-nav">
