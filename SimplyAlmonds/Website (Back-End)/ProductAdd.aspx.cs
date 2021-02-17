@@ -61,12 +61,12 @@ namespace SimplyAlmonds.Website__Back_End_
                 string folderPath = Server.MapPath("~/Pictures/");
                 FileUpload1.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
 
-                strSQL = "insert into Shop (ProductName, ProductDescription, ProductPrice, StockOnHand, ProductType, ImageUrl) " +
+                strSQL = "insert into Shop (ProductName, ProductDescription, StockOnHand, ProductType, ImageUrl) " +
                     $"values(@Name, @Description, @Price, @Stock, @Type, '{"~/Pictures/" + Path.GetFileName(FileUpload1.FileName)}')";
             }
             else
             {
-                strSQL = $"insert into Shop (ProductName, ProductDescription, ProductPrice, StockOnHand, ProductType) " +
+                strSQL = $"insert into Shop (ProductName, ProductDescription, StockOnHand, ProductType) " +
                     "values(@Name, @Description, @Price, @Stock, @Type)";
             }
 

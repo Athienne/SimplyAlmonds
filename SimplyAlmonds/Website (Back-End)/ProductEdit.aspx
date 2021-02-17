@@ -49,7 +49,7 @@
 
                 <div class="col-5">
                     <label for="ProductDescription_text">Product Type</label>
-                    <asp:DropDownList ID="ProductList" class="form-control w-25" runat="server" AutoPostBack="False" OnSelectedIndexChanged="ProductList_SelectedIndexChanged">
+                    <asp:DropDownList ID="ProductList" class="form-control w-25" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ProductList_SelectedIndexChanged">
                         <asp:ListItem Value="Ticket">Ticket</asp:ListItem>
                         <asp:ListItem Value="Single">Single</asp:ListItem>
                     </asp:DropDownList>

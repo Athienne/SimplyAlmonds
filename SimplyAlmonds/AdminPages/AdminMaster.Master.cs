@@ -22,7 +22,7 @@ namespace SimplyAlmonds.AdminPages
                     account.Visible = false; // hello user link button
 
 
-                    ///admin.Visible = true; // admin login link button
+                    admin.Visible = true; // admin login link button
 
 
                 }
@@ -36,7 +36,7 @@ namespace SimplyAlmonds.AdminPages
                     account.Text = "Hello " + "Admin".ToString();
 
 
-                    //admin.Visible = true; // admin login link button
+                    admin.Visible = true; // admin login link button
                 }
 
             }
@@ -47,17 +47,17 @@ namespace SimplyAlmonds.AdminPages
         }
         protected void admin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Website%20(Back-End)/loginadmin.aspx");
+            Response.Redirect("~/Website (Front-End)/loginadmin.aspx");
         }
 
         protected void loginuser_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Website%20(Front-End)/loginuser.aspx");
+            Response.Redirect("~/Website (Front-End)/loginuser.aspx");
         }
 
         protected void signuplb_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Website%20(Front-End)/signup.aspx");
+            Response.Redirect("~/Website (Front-End)/signup.aspx");
         }
         protected void logout_Click(object sender, EventArgs e)
         {
@@ -73,13 +73,12 @@ namespace SimplyAlmonds.AdminPages
             account.Visible = false; // hello user link button
 
 
-            //admin.Visible = true; // admin login link button
-            Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+            admin.Visible = true; // admin login link button
 
         }
         protected void account_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Website%20(Back-End)/accountadmin.aspx");
+            Response.Redirect("~/Website (Back-End)/accountadmin.aspx");
         }
     }
 }
