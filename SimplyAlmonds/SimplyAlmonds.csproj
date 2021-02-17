@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Website %28Front-End%29\Cart.aspx" />
     <Content Include="Website %28Front-End%29\SongLyrics.aspx" />
     <Content Include="Website %28Front-End%29\Discography.aspx" />
     <Content Include="Website %28Front-End%29\Biography.aspx" />
@@ -223,6 +224,13 @@
     </Compile>
     <Compile Include="AdminPages\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\SongLyrics.aspx.cs">
       <DependentUpon>SongLyrics.aspx</DependentUpon>
