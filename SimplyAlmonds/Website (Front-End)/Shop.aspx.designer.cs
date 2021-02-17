@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SimplyAlmonds.Website__Back_End_
+namespace SimplyAlmonds.Website__Front_End_
 {
 
 
-    public partial class ShopAdmin
+    public partial class Shop
     {
 
         /// <summary>
@@ -31,14 +31,5 @@ namespace SimplyAlmonds.Website__Back_End_
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater SingleRepeater;
-
-        /// <summary>
-        /// OrderRequestsButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button OrderRequestsButton;
     }
 }

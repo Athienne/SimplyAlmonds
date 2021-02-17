@@ -44,11 +44,12 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="background-color: #cd83ff">
-        <!-- Ticket Part -->
-        <div class="container py-3">
+    <br />
+    <!-- Ticket Part -->
+    <div class="container">
+        <div class="jumbotron">
             <div class="jumbotron" style="background-color: #d3b0ff">
-                <h1 class="heading_characteristics">TICKETS</h1>
+                <h1 class="heading_characteristics" style="text-align: center; background-color: #44f9ff; border-radius: 25px; border: 5px solid #cd83ff">TICKETS</h1>
                 <hr />
 
                 <div class="container-fluid">
@@ -64,6 +65,7 @@
                                                     <p class="card-text">
                                                         <%#Eval("ProductDescription")%>
                                                     </p>
+                                                    <br />
                                                     <a href="#" class="btn btn-primary mt-auto">Add to cart</a>
                                                 </div>
                                                 <div class="card-footer text-muted">
@@ -78,12 +80,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!--Single Part-->
-        <div class="container py-3">
+            <!--Single Part-->
             <div class="jumbotron" style="background-color: #d3b0ff">
-                <h1 class="heading_characteristics">SINGLES</h1>
+                <h1 class="heading_characteristics" style="text-align: center; background-color: #44f9ff; border-radius: 25px; border: 5px solid #cd83ff">SINGLES</h1>
                 <hr />
                 <div class="container-fluid">
                     <div class="row flex-row flex-nowrap" style="overflow-x: scroll;">
@@ -97,7 +96,7 @@
                                                 <div class="card-body h-100 d-flex flex-column">
                                                     <h5 class="card-title"><%#Eval("ProductName")%></h5>
                                                     <p class="card-text"><%#Eval("ProductDescription")%></p>
-                                                    
+
                                                 </div>
                                                 <div class="card-footer text-muted">
                                                     Stock on Hand: <%#Eval("StockOnHand")%>
@@ -113,6 +112,7 @@
                 </div>
 
             </div>
+            <asp:Button ID="OrderRequestsButton" runat="server" class="btn btn-success" Text="View Order Requests" OnClick="OrderRequestsButton_Click"/>
         </div>
     </div>
 </asp:Content>

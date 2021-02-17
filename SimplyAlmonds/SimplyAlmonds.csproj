@@ -95,7 +95,6 @@
     <Content Include="Pictures\pristine.jpg" />
     <Content Include="Pictures\SimplyAlmonds.png" />
     <Content Include="Pictures\sremedy.jpg" />
-    <Content Include="Pictures\Water_Lilies.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

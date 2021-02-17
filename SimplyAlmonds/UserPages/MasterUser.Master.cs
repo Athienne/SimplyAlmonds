@@ -22,7 +22,7 @@ namespace SimplyAlmonds.UserPages
                     account.Visible = false; // hello user link button
 
 
-                    admin.Visible = true; // admin login link button
+                    //admin.Visible = true; // admin login link button
 
 
                 }
@@ -36,7 +36,7 @@ namespace SimplyAlmonds.UserPages
                     account.Text = "Hello " + Session["username"].ToString();
 
 
-                    admin.Visible = true; // admin login link button
+                    //admin.Visible = true; // admin login link button
                 }
                 
             }
@@ -75,7 +75,7 @@ namespace SimplyAlmonds.UserPages
             account.Visible = false; // hello user link button
 
 
-            admin.Visible = true; // admin login link button
+            //admin.Visible = true; // admin login link button
             Response.Write(@"
                          <script>
                             alert('Logged Out Successfully');

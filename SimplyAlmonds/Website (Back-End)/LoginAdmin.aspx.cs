@@ -13,14 +13,7 @@ namespace SimplyAlmonds.Website__Front_End_
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["role"] == null)
-            {
-                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
-            }
-            else if (Session["role"].ToString() == "user")
-            {
-                Response.Redirect("~/Website%20(Front-End)/Home.aspx");
-            }
+
         }
 
         protected void loginbtn_Click(object sender, EventArgs e)
