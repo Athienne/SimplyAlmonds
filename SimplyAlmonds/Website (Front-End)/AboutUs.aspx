@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Simply Almonds – About Us" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="AboutUs.aspx.cs" Inherits="SimplyAlmonds.UserPages.WebForm1" %>
+﻿<%@ Page Title="Simply Almonds – About Us" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="AboutUs.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.AboutUs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="aboutUsContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -10,15 +10,19 @@
             <div class="jumbotron">
                 <div class="g-3">
 
-            <h1 class="fw-light">ABOUT US</h1>
-            <p class="lead text-muted"><!---->*Simply Web Inc.* is a partnership-based company whose sole purpose is to develop and manage promotion websites for up-and-coming artists or bands such as Simply Almonds. Simply Web Inc. specializes on selling the songs they will be releasing, along with concert tickets for live performances in a specific time through a website. </p>
+            <h1 class="fw-light">About Us</h1>
+            <p class="lead text-muted"><!---->&nbsp;<asp:Label ID="aboutDetails" runat="server" Text="Label"></asp:Label>
+                    </p>
+              <h1 class="fw-light">About The Band</h1>
+              <p class="lead text-muted"><asp:Label ID="bandDetails" runat="server" Text="Label"></asp:Label>
+                    </p>
               <p class="lead text-muted">&nbsp;</p>
-              <h1 class="fw-light">ABOUT SIMPLY ALMONDS</h1>
-              <p class="lead text-muted"><!---->Simply Almonds is an up-and-coming band based in Laguna.</p>
+              <h1 class="fw-light">For Inquiries</h1>
+              <p class="lead text-muted"><asp:Label ID="companyInquire" runat="server" Text="Label"></asp:Label>
+                    </p>
+              <p class="lead text-muted"><!----><asp:Label ID="bandInquire" runat="server" Text="Label"></asp:Label>
+                    </p>
               <p class="lead text-muted">&nbsp;</p>
-              <h1 class="fw-light">FOR INQUIRIES</h1>
-              <p class="lead text-muted"><!---->*Simply Web Inc.*: simplywebinc@fakeemail.com 09876969696<br />Simply Almonds: simplyalmonds@gmail.com 09338154675</p>
-                    <p class="lead text-muted">&nbsp;</p>
 
             </div>
             </div>

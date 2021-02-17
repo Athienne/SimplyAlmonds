@@ -69,6 +69,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Website %28Back-End%29\AboutUsEdit.aspx" />
+    <Content Include="Website %28Front-End%29\AboutUs.aspx" />
     <Content Include="Website %28Front-End%29\SongLyrics.aspx" />
     <Content Include="Website %28Front-End%29\Discography.aspx" />
     <Content Include="Website %28Front-End%29\Biography.aspx" />
@@ -137,7 +139,6 @@
     <Content Include="Website %28Front-End%29\UserAccount.aspx" />
     <Content Include="AdminPages\AdminMaster.Master" />
     <Content Include="Website %28Back-End%29\HomeAdmin.aspx" />
-    <Content Include="Website %28Front-End%29\AboutUs.aspx" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -223,6 +224,20 @@
     </Compile>
     <Compile Include="AdminPages\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\AboutUsEdit.aspx.cs">
+      <DependentUpon>AboutUsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\AboutUsEdit.aspx.designer.cs">
+      <DependentUpon>AboutUsEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\SongLyrics.aspx.cs">
       <DependentUpon>SongLyrics.aspx</DependentUpon>
@@ -384,13 +399,6 @@
     </Compile>
     <Compile Include="Website %28Back-End%29\HomeAdmin.aspx.designer.cs">
       <DependentUpon>HomeAdmin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Website %28Front-End%29\AboutUs.aspx.cs">
-      <DependentUpon>AboutUs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Website %28Front-End%29\AboutUs.aspx.designer.cs">
-      <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

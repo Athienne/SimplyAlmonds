@@ -7,11 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SimplyAlmonds.UserPages
+namespace SimplyAlmonds.Website__Front_End_
 {
 
 
-    public partial class WebForm1
+    public partial class AboutUs
     {
+
+        /// <summary>
+        /// aboutDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label aboutDetails;
+
+        /// <summary>
+        /// bandDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label bandDetails;
+
+        /// <summary>
+        /// companyInquire control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label companyInquire;
+
+        /// <summary>
+        /// bandInquire control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label bandInquire;
     }
 }
