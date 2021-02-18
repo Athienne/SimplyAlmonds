@@ -27,21 +27,21 @@ namespace SimplyAlmonds.Website__Back_End_
             }
             else
             {
+                if (Session["UploadedFile"] == null && FileUpload1.HasFile)
+                {
+                    Session["UploadedFile"] = FileUpload1;
+                }
+                else if (Session["UploadedFile"] != null && (!FileUpload1.HasFile))
+                {
+                    FileUpload1 = (FileUpload)Session["UploadedFile"];
+                }
+                else if (FileUpload1.HasFile)
+                {
+                    Session["UploadedFile"] = FileUpload1;
+                }
+
                 if (!Page.IsPostBack)
                 {
-                    if (Session["UploadedFile"] == null && FileUpload1.HasFile)
-                    {
-                        Session["UploadedFile"] = FileUpload1;
-                    }
-                    else if (Session["UploadedFile"] != null && (!FileUpload1.HasFile))
-                    {
-                        FileUpload1 = (FileUpload)Session["UploadedFile"];
-                    }
-                    else if (FileUpload1.HasFile)
-                    {
-                        Session["UploadedFile"] = FileUpload1;
-                    }
-
                     try
                     {
                         HttpContext con = HttpContext.Current;
@@ -80,7 +80,7 @@ namespace SimplyAlmonds.Website__Back_End_
 
                         reader.Close();
                         objConn.Close();
-                    }    
+                    }
                     catch (Exception)
                     {
                         Response.Redirect("~/Website%20(Back-End)/ShopAdmin.aspx");
@@ -127,7 +127,7 @@ namespace SimplyAlmonds.Website__Back_End_
             }
             else
             {
-                strSQL = "UPDATE Shop SET ProductName = @prodname, ProductDescription = @proddesc, ProductPrice = @prodprice, StockOnHand = @stock, ProductType = @prodtype, ImageUrl = @ImageUrl" +
+                strSQL = "UPDATE Shop SET ProductName = @prodname, ProductDescription = @proddesc, ProductPrice = @prodprice, StockOnHand = @stock, ProductType = @prodtype " +
                     "WHERE ShopID = @prodID";
             }
 
@@ -141,6 +141,7 @@ namespace SimplyAlmonds.Website__Back_End_
 
             objCmd.ExecuteNonQuery();
             objConn.Close();
+            Session.Remove("UploadedFile");
             Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
         }
 
@@ -159,11 +160,13 @@ namespace SimplyAlmonds.Website__Back_End_
             objCmd = new OleDbCommand(strSQL, objConn);
             objCmd.ExecuteNonQuery();
             objConn.Close();
+            Session.Remove("UploadedFile");
             Response.Redirect("~/Website%20(Back-End)/ShopAdmin.aspx");
         }
 
         protected void ProductList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ProductPanel.Update();
             if (ProductList.SelectedIndex == 1)
             {
                 FileUpload1.Visible = true;
@@ -172,6 +175,7 @@ namespace SimplyAlmonds.Website__Back_End_
             {
                 FileUpload1.Visible = false;
             }
+            
         }
     }
 }

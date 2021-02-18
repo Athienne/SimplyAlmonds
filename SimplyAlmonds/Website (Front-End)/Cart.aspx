@@ -29,6 +29,7 @@
                             <th scope="col">Product ID</th>
                             <th scope="col">Product Name</th>
                             <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
                             <th scope="col">Options</th>
                         </tr>
                     </thead>
@@ -54,6 +55,12 @@
                                             <asp:Button ID="plusButton" runat="server" Text="+" class="btn btn-outline-dark" OnClick="plus_Click" CommandArgument='<%#Eval("StockOnHand")%>' />
                                         </div>
                                     </td>
+
+                                    <td>
+                                        <!--Get Product Price of chosen product multiplied by Quantity-->
+                                        <asp:Label ID="ProductPriceLabel" runat="server" Text="PRICE"></asp:Label>
+                                    </td>
+
                                     <td>
                                         <!--Get Product ID to remove-->
                                         <asp:Button ID="RemoveItemBtn" runat="server" Text="&times;" class="close" aria-label="Close" OnClick="RemoveItemBtn_Click" CommandArgument='<%#Eval("ShopID")%>'/>
