@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="LoginUser.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.loginuser" %>
+﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="LoginUser.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.loginuser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
      <div class="container">
       <div class="row">
          <div class="col-md-6 mx-auto">
