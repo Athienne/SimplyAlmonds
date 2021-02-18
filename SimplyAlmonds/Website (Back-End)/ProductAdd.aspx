@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Add New Product" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="ProductAdd.aspx.cs" Inherits="SimplyAlmonds.Website__Back_End_.ProductAdd" %>
+﻿<%@ Page Title="Add New Product" Language="C#" MasterPageFile="~/AdminPages/AdminMaster.Master" AutoEventWireup="true" CodeBehind="ProductAdd.aspx.cs" Inherits="SimplyAlmonds.Website__Back_End_.ProductAdd" MaintainScrollPositionOnPostback="True" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
@@ -27,6 +27,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="True" runat="server"></asp:ScriptManager>
     <div class="container">
         <h1 class="heading_characteristics" style="text-align: center;">ADD A NEW SINGLE</h1>
         <div class="form-group">
@@ -51,10 +52,18 @@
 
                 <div class="col-5">
                     <label for="ProductDescription_text">Product Type</label>
-                    <asp:DropDownList ID="ProductList" class="form-control w-25" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ProductList_SelectedIndexChanged">
-                        <asp:ListItem Value="Ticket">Ticket</asp:ListItem>
-                        <asp:ListItem Value="Single">Single</asp:ListItem>
-                    </asp:DropDownList>
+
+                    <asp:UpdatePanel ID="ProductPanel" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="True" ClientIDMode="Static" RenderMode="Inline">
+                        <Triggers>
+                            <asp:PostBackTrigger ControlID="ProductList" />
+                        </Triggers>
+                        <ContentTemplate>
+                            <asp:DropDownList ID="ProductList" class="form-control w-25" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ProductList_SelectedIndexChanged">
+                                <asp:ListItem Value="Ticket">Ticket</asp:ListItem>
+                                <asp:ListItem Value="Single">Single</asp:ListItem>
+                            </asp:DropDownList>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
 
                 <div class="col-5">

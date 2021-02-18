@@ -84,6 +84,7 @@ namespace SimplyAlmonds.Website__Back_End_
 
         protected void ProductList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ProductPanel.Update();
             if (ProductList.SelectedIndex == 1)
             {
                 FileUpload1.Visible = true;
