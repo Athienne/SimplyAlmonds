@@ -79,6 +79,7 @@ namespace SimplyAlmonds.Website__Back_End_
 
             objCmd.ExecuteNonQuery();
             objConn.Close();
+            Session.Remove("UploadedFile");
             Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
         }
 
