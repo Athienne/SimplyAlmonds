@@ -59,7 +59,7 @@ namespace SimplyAlmonds.Website__Back_End_
             objConn.Open();
 
             // Intial load of Latest Events and News
-            strSQL = "SELECT * FROM [order] WHERE ID = " + value + "";
+            strSQL = "SELECT [order].*, users.email FROM users LEFT JOIN [order] ON users.username = [order].username WHERE orderID = " + value + "";
 
             OleDbDataReader dtReader;
             objCmd = new OleDbCommand(strSQL, objConn);
@@ -67,10 +67,11 @@ namespace SimplyAlmonds.Website__Back_End_
 
             while (dtReader.Read())
             {
-                productLabel.Text = dtReader.GetString(2);
-                time = dtReader.GetDateTime(3);
-                usernameLabel.Text = dtReader.GetString(4);
-                statusLabel.Text = dtReader.GetString(5);
+                productLabel.Text = dtReader.GetString(1);
+                time = dtReader.GetDateTime(2);
+                usernameLabel.Text = dtReader.GetString(3);
+                statusLabel.Text = dtReader.GetString(4);
+                emailLabel.Text = dtReader.GetString(5);
             }
 
             dateLabel.Text = time.Date.ToString();
@@ -98,7 +99,7 @@ namespace SimplyAlmonds.Website__Back_End_
             objConn = new OleDbConnection(strConnString);
             objConn.Open();
 
-            strSQL = "UPDATE [order] SET status = 'Finished' WHERE ID = " + idvalueholder + "";
+            strSQL = "UPDATE [order] SET status = 'Finished' WHERE orderID = " + idvalueholder + "";
             objCmd = new OleDbCommand(strSQL, objConn);
             objCmd.ExecuteNonQuery();
             Session.Remove("IdForMarking");

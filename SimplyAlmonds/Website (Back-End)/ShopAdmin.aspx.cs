@@ -56,5 +56,15 @@ namespace SimplyAlmonds.Website__Back_End_
                 }
             }
         }
+
+        protected void ProductAddButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Website%20(Back-End)/ProductAdd.aspx");
+        }
+
+        protected void OrderRequestsButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Website%20(Back-End)/OrderRequests.aspx");
+        }
     }
 }
