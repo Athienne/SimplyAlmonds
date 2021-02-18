@@ -61,9 +61,9 @@ namespace SimplyAlmonds.AdminPages
         }
         protected void logout_Click(object sender, EventArgs e)
         {
-            Session["username"] = "";
-            Session["fullname"] = "";
-            Session["role"] = "";
+            //Session["username"] = "";
+            //Session["fullname"] = "";
+            //Session["role"] = "";
             //Session["status"] = "";
 
             loginuser.Visible = true; // user login link button
@@ -71,6 +71,10 @@ namespace SimplyAlmonds.AdminPages
 
             logout.Visible = false; // logout link button
             account.Visible = false; // hello user link button
+
+            Session.Remove("role");
+            Session.Remove("username");
+            Session.Remove("fullname");
             Response.Redirect("~/Website%20(Front-End)/Home.aspx");
 
             //admin.Visible = true; // admin login link button
