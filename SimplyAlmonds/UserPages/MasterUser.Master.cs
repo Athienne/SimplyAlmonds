@@ -63,9 +63,9 @@ namespace SimplyAlmonds.UserPages
 
         protected void logout_Click(object sender, EventArgs e)
         {
-            Session["username"] = "";
-            Session["fullname"] = "";
-            Session["role"] = "";
+            //Session["username"] = "";
+            //Session["fullname"] = "";
+            //Session["role"] = "";
             //Session["status"] = "";
 
             loginuser.Visible = true; // user login link button
@@ -74,6 +74,9 @@ namespace SimplyAlmonds.UserPages
             logout.Visible = false; // logout link button
             account.Visible = false; // hello user link button
 
+            Session.Remove("role");
+            Session.Remove("username");
+            Session.Remove("fullname");
 
             //admin.Visible = true; // admin login link button
             Response.Write(@"

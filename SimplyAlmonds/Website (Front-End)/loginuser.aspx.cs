@@ -13,7 +13,25 @@ namespace SimplyAlmonds.Website__Front_End_
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Remove("role");
+            try
+            {
+                if (Session["role"].ToString() == null)
+                {
+                    Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
+                }
+                else if (Session["role"].ToString() == "user")
+                {
+                    Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+                }
+                else if (Session["role"].ToString() == "admin")
+                {
+                    Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
