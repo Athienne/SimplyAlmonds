@@ -79,11 +79,13 @@ namespace SimplyAlmonds.Website__Back_End_
 
             objCmd.ExecuteNonQuery();
             objConn.Close();
+            Session.Remove("UploadedFile");
             Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
         }
 
         protected void ProductList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ProductPanel.Update();
             if (ProductList.SelectedIndex == 1)
             {
                 FileUpload1.Visible = true;
