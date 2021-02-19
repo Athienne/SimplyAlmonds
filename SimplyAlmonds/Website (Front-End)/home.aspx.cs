@@ -13,6 +13,7 @@ namespace SimplyAlmonds.Website__Front_End_
         OleDbConnection objConn;
         OleDbCommand objCmd;
         String strSQL;
+
         protected void Page_PreInit(object sender, EventArgs e)
         {
             try
@@ -24,8 +25,17 @@ namespace SimplyAlmonds.Website__Front_End_
 
             }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["role"] != null)
+            {
+                if (Session["role"].ToString() == "admin")
+                {
+                    Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
+                }
+            }
+
             String strConnString;
             strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
             Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
