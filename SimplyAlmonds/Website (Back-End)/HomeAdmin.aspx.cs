@@ -32,7 +32,7 @@ namespace SimplyAlmonds.Website_Back_End_
             {
                 if (Session["role"].ToString() == "user")
                 {
-                    Response.Redirect("~/Website%20(Front-End)/Biography.aspx");
+                    Response.Redirect("~/Website%20(Front-End)/Home.aspx");
                 }
             }
             else
