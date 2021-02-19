@@ -74,6 +74,7 @@
     <Content Include="Website %28Back-End%29\AboutUsEdit.aspx" />
     <Content Include="Website %28Back-End%29\SalesSummary.aspx" />
     <Content Include="Website %28Front-End%29\AboutUs.aspx" />
+    <Content Include="Website %28Front-End%29\Cart.aspx" />
     <Content Include="Website %28Front-End%29\SongLyrics.aspx" />
     <Content Include="Website %28Front-End%29\Discography.aspx" />
     <Content Include="Website %28Front-End%29\Biography.aspx" />
@@ -250,6 +251,13 @@
     </Compile>
     <Compile Include="Website %28Front-End%29\AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Front-End%29\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\SongLyrics.aspx.cs">
       <DependentUpon>SongLyrics.aspx</DependentUpon>
