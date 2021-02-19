@@ -11,7 +11,13 @@ namespace SimplyAlmonds.UserPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["role"] != null)
+            {
+                if (Session["role"].ToString() == "admin")
+                {
+                    Response.Redirect("~/Website%20(Back-End)/DiscographyEdit.aspx");
+                }
+            }
         }
     }
 }

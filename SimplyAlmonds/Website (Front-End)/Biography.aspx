@@ -2,27 +2,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="biographyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">BIOGRAPHY</h1>
-            <p class="lead text-muted"><!----></p>
-          </div>
-        </div>
-      </section>
-
+     
+        
     <div class="album py-5 bg-light">
         <div class="container">
-            <div class="jumbotron">
+            <div class="jumbotron" style="text-align:center;">
+                <h1 class="fw-light">MEMBERS OF<br />SIMPLY ALMONDS</h1><br /><br />
                 <div class="g-3">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <asp:Repeater ID="biographyMembersRepeater" runat="server" DataSourceID="SqlDataSourceBiography">
                 <ItemTemplate>
                     <div class="col">
                         <div class="card mb-4 shadow-sm">
-                            <asp:Image ID="imgMember" runat="server" ImageUrl='<%# String.Format("~/Pictures/{0}", Eval("mempic")) %>' />
-                            <div class="card-body">
-                                <h1 class="card-title pricing-card-title"> <asp:Label ID="lblMemName" runat="server" Text='<%# Eval("memname") %>'></asp:Label></h1>
+                            <asp:Image ID="imgMember" runat="server" ImageUrl='<%# String.Format("~/Pictures/{0}", Eval("mempic")) %>' style="height: auto; width: 100%"/>
+                            <div class="card-body" style="height: 180px;">
+                                <h3 class="card-title pricing-card-title"> <asp:Label ID="lblMemName" runat="server" Text='<%# Eval("memname") %>'></asp:Label></h3>
                                     <ul class="list-unstyled mt-3 mb-4">
                                         <li>
                                             Position:

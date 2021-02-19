@@ -14,6 +14,14 @@ namespace SimplyAlmonds.Website__Front_End_
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["role"] != null)
+            {
+                if (Session["role"].ToString() == "admin")
+                {
+                    Response.Redirect("~/Website%20(Back-End)/AboutUsEdit.aspx");
+                }
+            }
+
             OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
             conn.Open();
             string st = "SELECT * FROM about;";

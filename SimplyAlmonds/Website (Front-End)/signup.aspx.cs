@@ -20,48 +20,40 @@ namespace SimplyAlmonds.Website__Front_End_
         {
             try
             {
-                if (uname.Text==""||email.Text==""||pass.Text=="")
+                if (uname.Text == "" || email.Text == "" || pass.Text == "")
                 {
                     Response.Write("<script>alert('Invalid credentials');</script>");
                 }
                 else
                 {
-
                     string connstr = "Provider=Microsoft.Jet.OleDB.4.0; Data Source=";
                     connstr += Server.MapPath("~/App_Data/simplyalmonds.Mdb");
                     OleDbConnection conn = new OleDbConnection(connstr);
                     conn.Open();
-                    OleDbCommand cmd = new OleDbCommand("insert into users(username,passw,email,user_type) values('" + uname.Text.Trim() + "' , '" + pass.Text + "','"+email.Text.Trim() + "','user');", conn);
+                    OleDbCommand cmd = new OleDbCommand("insert into users(username, passw, email, user_type, active) values('" + uname.Text.Trim() + "' , '" + pass.Text + "','"+email.Text.Trim() + "','user', 'True');", conn);
                     OleDbCommand cmd2 = new OleDbCommand("select * from users where email='" + email.Text.Trim()+"' or username='"+uname.Text.Trim()+"';", conn);
                     OleDbDataReader reader = cmd2.ExecuteReader();
 
                     if (reader.Read() == true)
                     {
                         Response.Write(@"
-                         <script>
-                            alert('the email and/or username you entered is already in the database');
-                            
+                        <script>
+                            alert('The E-Mail and/or Username you entered is already in the database!');      
                         </script>
-                    ");
-
+                        ");
                     }
-
                     else
                     {
-                        
-
                         cmd.ExecuteNonQuery();
 
                         conn.Close();
                         Response.Write(@"
-                         <script>
+                        <script>
                             alert('Sign Up Successful!');
-                            window.location = 'home.aspx';
+                            window.location = 'Home.aspx';
                         </script>
-                    ");
-                    }
-
-                    
+                        ");
+                    }                 
                 }
             }
             catch (Exception ex)

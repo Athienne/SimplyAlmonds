@@ -17,23 +17,24 @@ namespace SimplyAlmonds.Website__Back_End_
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["role"] == null)
+            if (Session["role"] != null)
             {
-                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
-            }
-            else if (Session["role"].ToString() == "user")
-            {
-                Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+                if (Session["role"].ToString() == "user")
+                {
+                    Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+                }
             }
             else
             {
-                if (Session["UploadedFile"] == null && FileUpload1.HasFile)
-                    Session["UploadedFile"] = FileUpload1;
-                else if (Session["UploadedFile"] != null && (!FileUpload1.HasFile))
-                    FileUpload1 = (FileUpload)Session["UploadedFile"];
-                else if (FileUpload1.HasFile)
-                    Session["UploadedFile"] = FileUpload1;
+                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
             }
+
+            if (Session["UploadedFile"] == null && FileUpload1.HasFile)
+                Session["UploadedFile"] = FileUpload1;
+            else if (Session["UploadedFile"] != null && (!FileUpload1.HasFile))
+                FileUpload1 = (FileUpload)Session["UploadedFile"];
+            else if (FileUpload1.HasFile)
+                Session["UploadedFile"] = FileUpload1;
         }
 
         protected void checkModal_click(object sender, EventArgs e)
