@@ -138,6 +138,9 @@
     <Content Include="Website %28Front-End%29\UserAccount.aspx" />
     <Content Include="AdminPages\AdminMaster.Master" />
     <Content Include="Website %28Back-End%29\HomeAdmin.aspx" />
+    <None Include="Properties\PublishProfiles\simplyalmonds - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\simplyalmonds - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\simplyalmonds - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
