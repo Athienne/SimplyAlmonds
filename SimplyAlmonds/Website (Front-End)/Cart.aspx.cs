@@ -11,6 +11,20 @@ namespace SimplyAlmonds.Website__Front_End_
 {
     public partial class Cart : System.Web.UI.Page
     {
+        bool creditCardisValid(string dateString)
+        {
+            DateTime dateValue;
+
+            if (DateTime.TryParse(dateString, out dateValue))
+                if (dateValue < DateTime.Now)
+                    return false;
+                else
+                    return true;
+            else
+                return false;
+        }
+
+
         public void connection()
         {
             OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
@@ -90,13 +104,87 @@ namespace SimplyAlmonds.Website__Front_End_
         {
             OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
             conn.Open();
-            OleDbCommand qCmd = new OleDbCommand("DELETE FROM cart WHERE OrderID = " + Int32.Parse(((Button)sender).CommandArgument) + "", conn);
+            OleDbCommand qCmd = new OleDbCommand("DELETE FROM cart WHERE CartID = " + Int32.Parse(((Button)sender).CommandArgument) + "", conn);
             qCmd.ExecuteNonQuery();
             conn.Close();
 
             connection();
 
         }
+
+        protected void purchaseButton_Click(object sender, EventArgs e)
+        {
+            if (customerName.Text == "" || cardNumber.Text == "" || expiryDate.Text == "" || cvv.Text == "" || streetAddress.Text == "" || city.Text == "" || stateProvince.Text == "" || zipCode.Text == "")
+            {
+                Response.Write("<script>alert('" + "Information provided not complete." + "')</script>");
+            }
+            else
+            {
+                if (!creditCardisValid(expiryDate.Text) || !(cardNumber.Text.Length >= 13 && cardNumber.Text.Length <= 16) || !(cvv.Text.Length >= 3 && cvv.Text.Length <= 4))
+                {
+                    Response.Write("<script>alert('" + "Invalid Credit Card Info." + "')</script>");
+                }
+                else
+                {
+                    int maxRow = getMaxRow();
+                    int uniqueID = getUniqueID();
+
+                    OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
+                    conn.Open();
+
+                    for (int i = 0; i < maxRow; i++) 
+                    {
+                        OleDbCommand shopidcmd = new OleDbCommand("SELECT TOP 1 ShopID FROM cart;", conn);
+                        int shpid = (int)shopidcmd.ExecuteScalar();
+                        OleDbCommand prodtypecmd = new OleDbCommand("SELECT ProductType FROM Shop WHERE ShopID = " + shpid + ";", conn);
+                        string prodtype = (string)prodtypecmd.ExecuteScalar();
+                        OleDbCommand quantitycmd = new OleDbCommand("SELECT TOP 1 Quantity FROM cart;", conn);
+                        int quan = (int)quantitycmd.ExecuteScalar();
+                        string date = DateTime.Now.ToString("MM/dd/yyyy");
+                        string userName = "Guest";
+                        string status = "Finished";
+
+                        OleDbCommand qCmd = new OleDbCommand("INSERT INTO [order] VALUES ('" + uniqueID + "','" + shpid + "','" + prodtype + "','" + date + "','" + userName + "','" + quan + "','" + status + "')", conn);
+                        qCmd.ExecuteNonQuery();
+
+                        OleDbCommand stockded = new OleDbCommand("UPDATE Shop SET StockOnHand = StockOnHand - " + quan + " WHERE ShopID = " + shpid + ";", conn);
+                        stockded.ExecuteNonQuery();
+
+                        OleDbCommand delz = new OleDbCommand("DELETE FROM (SELECT TOP 1 * FROM cart);", conn);
+                        delz.ExecuteNonQuery();
+
+                    }
+
+                    conn.Close();
+
+                }
+            }
+
+        }
+
+
+        public int getUniqueID()
+        {
+            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
+            conn.Open();
+            OleDbCommand qCmd = new OleDbCommand("SELECT MAX(orderID) FROM [order];", conn);
+            int uniqueid = ((int)qCmd.ExecuteScalar()+1);
+            conn.Close();
+
+            return uniqueid;
+        }
+
+        public int getMaxRow()
+        {
+            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
+            conn.Open();
+            OleDbCommand qCmd = new OleDbCommand("SELECT COUNT(CartID) FROM cart;", conn);
+            int rows = (int)qCmd.ExecuteScalar();
+            conn.Close();
+
+            return rows;
+        }
+
 
     }
 }

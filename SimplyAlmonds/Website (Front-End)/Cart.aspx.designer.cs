@@ -51,13 +51,13 @@ namespace SimplyAlmonds.Website__Front_End_
         protected global::System.Web.UI.WebControls.TextBox expiryDate;
 
         /// <summary>
-        /// CVV control.
+        /// cvv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CVV;
+        protected global::System.Web.UI.WebControls.TextBox cvv;
 
         /// <summary>
         /// streetAddress control.
@@ -112,5 +112,14 @@ namespace SimplyAlmonds.Website__Front_End_
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button backToShop;
+
+        /// <summary>
+        /// purchaseButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button purchaseButton;
     }
 }

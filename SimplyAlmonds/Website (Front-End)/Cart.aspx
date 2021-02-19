@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.Cart" %>
+﻿<%@ Page Title="Cart & Checkout" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.Cart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
@@ -346,7 +346,7 @@ input::-webkit-inner-spin-button {
                                         <td><%# DataBinder.Eval(Container.DataItem, "Quantity") %></td>
                                         <td><%# String.Format("₱ {0}",DataBinder.Eval(Container.DataItem, "ProductPrice")) %></td>
                                         <td><%# String.Format("₱ {0}",DataBinder.Eval(Container.DataItem, "TotalPrice")) %></td>
-                                        <td><asp:Button ID="removeButton" runat="server" Text="Remove" class="btn btn-outline-danger" OnClick="removeButton_Click" CommandArgument='<%#Eval("OrderID") %>' /><td>
+                                        <td><asp:Button ID="removeButton" runat="server" Text="Remove" class="btn btn-outline-danger" OnClick="removeButton_Click" CommandArgument='<%#Eval("CartID") %>' /><td>
                                         </tr>
                                     </ItemTemplate>
                                          <SeparatorTemplate>
@@ -374,8 +374,8 @@ input::-webkit-inner-spin-button {
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex flex-row">
-                            <div class="inputbox mt-3 mr-2"> <asp:TextBox ID="expiryDate" runat="server" CssClass="form-control" /> <span>Expiry</span> </div>
-                            <div class="inputbox mt-3 mr-2"> <asp:TextBox ID="CVV" runat="server" CssClass="form-control" /> <span>CVV</span> </div>
+                            <div class="inputbox mt-3 mr-2"> <asp:TextBox ID="expiryDate" runat="server" CssClass="form-control" /> <span>Expiry (MM/YYYY)</span> </div>
+                            <div class="inputbox mt-3 mr-2"> <asp:TextBox ID="cvv" runat="server" CssClass="form-control" /> <span>CVV</span> </div>
                         </div>
                     </div>
                 </div>
@@ -411,7 +411,7 @@ input::-webkit-inner-spin-button {
                          </div>
 
                      </div>
-                     <div class="cart_buttons"> <asp:Button ID="backToShop" runat="server" class="button cart_button_clear" Text="Back To Shop" PostBackUrl="~/Website (Front-End)/Shop.aspx" /> <button type="button" class="button cart_button_checkout" data-toggle="modal" data-target="#myModal">Purchase</button> </div>
+                     <div class="cart_buttons"> <asp:Button ID="backToShop" runat="server" class="button cart_button_clear" Text="Back To Shop" PostBackUrl="~/Website (Front-End)/Shop.aspx" /> <asp:Button ID="purchaseButton" runat="server" Text="Purchase" class="button cart_button_checkout" OnClick="purchaseButton_Click" /> </div>
                  </div>
              </div>
          </div>
