@@ -68,11 +68,12 @@ namespace SimplyAlmonds.Website__Back_End_
 
             while (dtReader.Read())
             {
-                productLabel.Text = dtReader.GetString(1);
-                time = dtReader.GetDateTime(2);
-                usernameLabel.Text = dtReader.GetString(3);
-                statusLabel.Text = dtReader.GetString(4);
-                emailLabel.Text = dtReader.GetString(5);
+                productLabel.Text = dtReader.GetString(2);
+                time = dtReader.GetDateTime(3);
+                usernameLabel.Text = dtReader.GetString(4);
+                quantityLabel.Text = dtReader.GetInt32(5).ToString();
+                statusLabel.Text = dtReader.GetString(6);
+                emailLabel.Text = dtReader.GetString(7);
             }
 
             dateLabel.Text = time.Date.ToString("MM/dd/yyyy");

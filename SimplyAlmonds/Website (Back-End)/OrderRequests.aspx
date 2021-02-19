@@ -96,6 +96,9 @@
                     Date of Purchase:
                     <asp:Label ID="dateLabel" runat="server" Text=""></asp:Label>
                     <br />
+                    Quantity:
+                    <asp:Label ID="quantityLabel" runat="server" Text=""></asp:Label>
+                    <br />
                     Status:
                     <asp:Label ID="statusLabel" runat="server" Text="" ForeColor="#3366FF"></asp:Label>
                 </div>

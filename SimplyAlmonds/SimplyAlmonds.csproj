@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,6 +72,7 @@
   <ItemGroup>
     <Content Include="Pictures\jobert.png" />
     <Content Include="Website %28Back-End%29\AboutUsEdit.aspx" />
+    <Content Include="Website %28Back-End%29\SalesSummary.aspx" />
     <Content Include="Website %28Front-End%29\AboutUs.aspx" />
     <Content Include="Website %28Front-End%29\SongLyrics.aspx" />
     <Content Include="Website %28Front-End%29\Discography.aspx" />
@@ -234,6 +236,13 @@
     </Compile>
     <Compile Include="Website %28Back-End%29\AboutUsEdit.aspx.designer.cs">
       <DependentUpon>AboutUsEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\SalesSummary.aspx.cs">
+      <DependentUpon>SalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website %28Back-End%29\SalesSummary.aspx.designer.cs">
+      <DependentUpon>SalesSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website %28Front-End%29\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
