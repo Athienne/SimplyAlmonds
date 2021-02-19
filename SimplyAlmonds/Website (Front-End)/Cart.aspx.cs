@@ -43,6 +43,19 @@ namespace SimplyAlmonds.Website__Front_End_
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["role"] != null)
+            {
+                if (Session["role"].ToString() == "admin")
+                {
+                    Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
+                }
+
+            }
+            else
+            {
+                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
+            }
+
             if (!IsPostBack)
             {
                 connection();
@@ -141,7 +154,7 @@ namespace SimplyAlmonds.Website__Front_End_
                         OleDbCommand quantitycmd = new OleDbCommand("SELECT TOP 1 Quantity FROM cart;", conn);
                         int quan = (int)quantitycmd.ExecuteScalar();
                         string date = DateTime.Now.ToString("MM/dd/yyyy");
-                        string userName = "Guest";
+                        string userName = Session["username"].ToString();
                         string status = "Finished";
 
                         OleDbCommand qCmd = new OleDbCommand("INSERT INTO [order] VALUES ('" + uniqueID + "','" + shpid + "','" + prodtype + "','" + date + "','" + userName + "','" + quan + "','" + status + "')", conn);
@@ -156,6 +169,8 @@ namespace SimplyAlmonds.Website__Front_End_
                     }
 
                     conn.Close();
+                    Response.Write("<script>alert('" + "Transaction Complete!" + "')</script>");
+                    Response.Redirect("~/Website%20(Front-End)/Home.aspx");
 
                 }
             }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="Shop.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.Shop" %>
+﻿<%@ Page Title="" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/UserPages/MasterUser.Master" AutoEventWireup="true" CodeBehind="Shop.aspx.cs" Inherits="SimplyAlmonds.Website__Front_End_.Shop" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
@@ -80,7 +80,7 @@
                                                     <asp:Button ID="plusButton" runat="server" Text="+" class="btn btn-outline-dark" OnClick="plus_Click" CommandArgument='<%#Eval("StockOnHand")%>' />
                                                 </div>
                                                 <br />
-                                                <a href="#" class="btn btn-primary mt-auto">Add to cart</a>
+                                                <asp:Button ID="addToCartButtonProd" runat="server" Text="Add to Cart" class="btn btn-primary mt-auto" OnClick="addToCartButton_Click" CommandArgument='<%#Eval("ShopID") %>' />
 
                                             </div>
                                             <div class="card-footer text-muted">
@@ -110,7 +110,7 @@
                                             <div class="card-body h-100 d-flex flex-column">
                                                 <h5 class="card-title"><%#Eval("ProductName")%></h5>
                                                 <p class="card-text"><%#Eval("ProductDescription")%></p>
-                                                <a href="#" class="btn btn-primary mt-auto">Add to cart</a>
+                                                <asp:Button ID="addToCartButtonProd" runat="server" Text="Add to Cart" class="btn btn-primary mt-auto" OnClick="addToCartButtonProd_Click" CommandArgument='<%#Eval("ShopID") %>' />
                                             </div>
                                             <div class="card-footer text-muted">
                                                 Stock on Hand: <%#Eval("StockOnHand")%>

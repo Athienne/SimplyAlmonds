@@ -87,5 +87,64 @@ namespace SimplyAlmonds.Website__Front_End_
                 qtyText.Text = qty.ToString();
             }
         }
+
+        protected void addToCartButton_Click(object sender, EventArgs e)
+        {
+                string quantity = "1";
+                RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
+                quantity = (item.FindControl("quantityTxt") as TextBox).Text;
+
+                OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
+                conn.Open();
+
+                OleDbCommand checker = new OleDbCommand("SELECT ProductType FROM Shop WHERE ShopID = " + Int32.Parse(((Button)sender).CommandArgument) + "", conn);
+                string chk = (string)checker.ExecuteScalar();
+
+                OleDbCommand pricecmd = new OleDbCommand("SELECT ProductPrice FROM Shop WHERE ShopID = " + Int32.Parse(((Button)sender).CommandArgument) + "", conn);
+                double price = (double)pricecmd.ExecuteScalar();
+
+                OleDbCommand qCmd = new OleDbCommand("INSERT INTO cart VALUES(" + getUniqueID() + ", " + Int32.Parse(((Button)sender).CommandArgument) + "," + Convert.ToInt32(quantity) + "," + (price * Convert.ToInt32(quantity)) + ")", conn);
+                qCmd.ExecuteNonQuery();
+
+                conn.Close();
+                Response.Write("<script>alert('" + "Added to Cart." + "')</script>");
+        }
+
+        protected void addToCartButtonProd_Click(object sender, EventArgs e)
+        {
+            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
+            conn.Open();
+
+            OleDbCommand checker = new OleDbCommand("SELECT ProductType FROM Shop WHERE ShopID = " + Int32.Parse(((Button)sender).CommandArgument) + "", conn);
+            string chk = (string)checker.ExecuteScalar();
+
+            OleDbCommand pricecmd = new OleDbCommand("SELECT ProductPrice FROM Shop WHERE ShopID = " + Int32.Parse(((Button)sender).CommandArgument) + "", conn);
+            double price = (double)pricecmd.ExecuteScalar();
+
+            OleDbCommand qCmd = new OleDbCommand("INSERT INTO cart VALUES(" + getUniqueID() + ", " + Int32.Parse(((Button)sender).CommandArgument) + ",1," + (price * 1) + ")", conn);
+            qCmd.ExecuteNonQuery();
+
+            conn.Close();
+            Response.Write("<script>alert('" + "Added to Cart." + "')</script>");
+        }
+
+        public int getUniqueID()
+        {
+            try
+            {
+                OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
+                conn.Open();
+                OleDbCommand qCmd = new OleDbCommand("SELECT MAX(CartID) FROM cart;", conn);
+                int uniqueid = ((int)qCmd.ExecuteScalar() + 1);
+                conn.Close();
+
+                return uniqueid;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
     }
 }
