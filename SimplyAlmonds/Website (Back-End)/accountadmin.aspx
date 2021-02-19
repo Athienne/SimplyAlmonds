@@ -77,7 +77,8 @@
                 <tr class="center">
                     <td>
                         <asp:TextBox CssClass="auto-style1" ID="deactoract" runat="server" placeholder="ID to activate/deactivate" MaxLength="30" Width="50%" Height="45px" ></asp:TextBox> &nbsp;
-                        <asp:Button class="btn btn-success btn-block btn-lg" ID="updatebtn" runat="server" Text="Update" OnClick="updatebtn_Click" Width="30%" Height="45px" />
+                        <asp:Button class="btn btn-success btn-block btn-lg" ID="updatebtn" runat="server" Text="Update" OnClick="updatebtn_Click" Width="30%" Height="45px" /> &nbsp; &nbsp; &nbsp;
+                        <asp:Button class="btn btn-primary btn-block btn-lg" ID="salesSummary" runat="server" Text="View Sales Summary" OnClick="salesSummary_Click" Width="30%" Height="45px" />
                     </td>
                 </tr>
                 <tr class="center">

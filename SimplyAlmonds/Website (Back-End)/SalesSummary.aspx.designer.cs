@@ -15,6 +15,24 @@ namespace SimplyAlmonds.Website__Back_End_
     {
 
         /// <summary>
+        /// topLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label topLabel;
+
+        /// <summary>
+        /// botLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label botLabel;
+
+        /// <summary>
         /// PieChartProducts control.
         /// </summary>
         /// <remarks>
@@ -22,5 +40,23 @@ namespace SimplyAlmonds.Website__Back_End_
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.DataVisualization.Charting.Chart PieChartProducts;
+
+        /// <summary>
+        /// SinglesChart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart SinglesChart;
+
+        /// <summary>
+        /// TicketChart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart TicketChart;
     }
 }

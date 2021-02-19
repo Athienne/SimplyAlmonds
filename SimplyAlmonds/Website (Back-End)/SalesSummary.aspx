@@ -28,12 +28,77 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Chart ID="PieChartProducts" runat="server">
-        <Series>
-            <asp:Series Name="Series1" XValueMember="0" YValueMembers="2"></asp:Series>
-        </Series>
-        <ChartAreas>
-            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
-        </ChartAreas>
-    </asp:Chart>
+    <br />
+    <div class="container">
+        <div class="jumbotron">
+            <br />
+            <div align="center">
+                <h1 style="text-align: center; font-weight: 500">OVERALL PRODUCTS SOLD</h1>
+                <h6>Top Selling and Least Selling Products</h6>
+                <br />
+                Top Selling Product: 
+                <asp:Label ID="topLabel" runat="server"></asp:Label>
+                <br />
+                Least Selling Product:
+                <asp:Label ID="botLabel" runat="server"></asp:Label>
+                <br />
+                <br />
+                <asp:Chart ID="PieChartProducts" runat="server" Width="400px"> 
+                    <Series>
+                        <asp:Series Name="Series1" XValueMember="0" YValueMembers="1"></asp:Series>
+                    </Series>
+                    <Legends>
+                        <asp:Legend Alignment="Center" Docking="Bottom" IsTextAutoFit="false" Name="Default" LegendStyle="Row" />
+                    </Legends>
+                    <ChartAreas>
+                        <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                    </ChartAreas>
+                </asp:Chart>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-6" align="center">
+                    <asp:Chart ID="SinglesChart" runat="server">
+                        <Titles>
+                            <asp:Title Font="Segoe UI, 18pt, style=Bold, Italic" Name="SinglesTitle"
+                                Text="Singles" Alignment="MiddleCenter">
+                            </asp:Title>
+                        </Titles>
+                        <Series>
+                            <asp:Series Name="SingleSeries" XValueMember="1" YValueMembers="0"></asp:Series>
+                        </Series>
+                        <ChartAreas>
+                            <asp:ChartArea Name="SinglesArea">
+
+                                <AxisX Title="Month" TitleFont="Segoe UI, 12pt, style=Bold"></AxisX>
+                                <AxisY Title="Buyers" TitleFont="Segoe UI, 12pt, style=Bold"></AxisY>
+
+                            </asp:ChartArea>
+                        </ChartAreas>
+                    </asp:Chart>
+                </div>
+                <div class="col-6" align="center">
+                    <asp:Chart ID="TicketChart" runat="server">
+                        <Titles>
+                            <asp:Title Font="Segoe UI, 18pt, style=Bold, Italic" Name="TicketTitle"
+                                Text="Tickets" Alignment="MiddleCenter">
+                            </asp:Title>
+                        </Titles>
+                        <Series>
+                            <asp:Series Name="TicketSeries" XValueMember="1" YValueMembers="0"></asp:Series>
+                        </Series>
+                        <ChartAreas>
+                            <asp:ChartArea Name="TicketArea">
+
+                                <AxisX Title="Month" TitleFont="Segoe UI, 12pt, style=Bold"></AxisX>
+                                <AxisY Title="Buyers" TitleFont="Segoe UI, 12pt, style=Bold"></AxisY>
+
+                            </asp:ChartArea>
+                        </ChartAreas>
+                    </asp:Chart>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
