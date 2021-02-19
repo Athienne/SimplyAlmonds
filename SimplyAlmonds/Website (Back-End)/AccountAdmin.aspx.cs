@@ -80,5 +80,10 @@ namespace SimplyAlmonds.Website__Back_End_
                         </script>
                     ");
         }
+
+        protected void salesSummary_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Website%20(Back-End)/SalesSummary.aspx");
+        }
     }
 }

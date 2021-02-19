@@ -68,6 +68,7 @@ namespace SimplyAlmonds.Website__Back_End_
 
             while (dtReader.Read())
             {
+                productIDLabel.Text = dtReader.GetInt32(1).ToString();
                 productLabel.Text = dtReader.GetString(2);
                 time = dtReader.GetDateTime(3);
                 usernameLabel.Text = dtReader.GetString(4);

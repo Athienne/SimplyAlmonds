@@ -90,6 +90,9 @@
                     E-Mail Address:
                     <asp:Label ID="emailLabel" runat="server" Text=""></asp:Label>
                     <br />
+                    Product ID:
+                    <asp:Label ID="productIDLabel" runat="server" Text=""></asp:Label>
+                    <br />
                     Product Ordered:
                     <asp:Label ID="productLabel" runat="server" Text=""></asp:Label>
                     <br />
