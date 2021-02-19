@@ -81,7 +81,18 @@
             <br />
             <br />
             <div class="auto-style2" style="background-color: #FFFFFF">
-                <asp:GridView ID="purchasehistory" runat="server" Height="100px" HorizontalAlign="Center" Width="1045px" Font-Names="Bebas" Font-Overline="False" Font-Size="XX-Large"></asp:GridView>
+                <asp:GridView ID="purchasehistory" runat="server" Height="100px" HorizontalAlign="Center" Width="1045px" Font-Names="Bebas" Font-Overline="False" Font-Size="Large" CellPadding="4" ForeColor="#333333">
+                    <AlternatingRowStyle BackColor="White" />
+                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                    <SortedDescendingHeaderStyle BackColor="#820000" />
+                </asp:GridView>
             </div>
         </div>
     </div>
