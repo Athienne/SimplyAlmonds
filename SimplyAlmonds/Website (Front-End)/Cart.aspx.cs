@@ -4,14 +4,35 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.OleDb;
+using System.Data;
 
 namespace SimplyAlmonds.Website__Front_End_
 {
     public partial class Cart : System.Web.UI.Page
     {
+        public void connection()
+        {
+            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
+            conn.Open();
+            string st = "SELECT * FROM cart INNER JOIN Shop ON cart.ShopID = Shop.ShopID;";
+            OleDbCommand dbc = new OleDbCommand(st, conn);
+            DataSet ds = new DataSet();
+            OleDbDataAdapter da = new OleDbDataAdapter(dbc);
+            da.Fill(ds);
+            CartItemRepeater.DataSource = ds;
+            CartItemRepeater.DataBind();
+            conn.Close();
+
+            totalPriceProd.InnerHtml = getTotalPrice();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Join Shop table and cart table
+            if (!IsPostBack)
+            {
+                connection();
+            }
         }
         protected void minus_Click(object sender, EventArgs e)
         {
@@ -47,13 +68,35 @@ namespace SimplyAlmonds.Website__Front_End_
             }
         }
 
-        protected void RemoveItemBtn_Click(object sender, EventArgs e)
+        public string getTotalPrice()
         {
-            Button button = (Button)sender;
-            RepeaterItem item = (RepeaterItem)button.NamingContainer;
-            var argument = ((Button)sender).CommandArgument;  //Product ID is passed here
-
-            //Back-end code here; delete item where ShopID = $"{argument}"
+            try
+            {
+                OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
+                string query = "SELECT SUM(TotalPrice) from cart;";
+                OleDbCommand command = new OleDbCommand(query, conn);
+                conn.Open();
+                double total = (double)command.ExecuteScalar();
+                conn.Close();
+                return String.Format("₱ {0:N2}", total);
+            }
+            catch
+            {
+                return String.Format("₱ 0.00");
+            }
         }
+
+        protected void removeButton_Click(object sender, EventArgs e)
+        {
+            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/App_Data/simplyalmonds.MDB"));
+            conn.Open();
+            OleDbCommand qCmd = new OleDbCommand("DELETE FROM cart WHERE OrderID = " + Int32.Parse(((Button)sender).CommandArgument) + "", conn);
+            qCmd.ExecuteNonQuery();
+            conn.Close();
+
+            connection();
+
+        }
+
     }
 }
