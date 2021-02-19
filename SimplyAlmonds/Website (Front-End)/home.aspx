@@ -76,7 +76,7 @@
                                                 <small><%#Eval("DateAdded")%></small>
                                             </div>
                                             <p class="mb-1"><%#Eval("EventDetails")%></p>
-                                            <small>Click for more details.</small>
+                                            <small>© Simply Almonds</small>
                                         </a>
                                     </ItemTemplate>
                                 </asp:Repeater>
@@ -100,9 +100,8 @@
                                             <small><%#Eval("DateAdded")%></small>
                                         </div>
                                         <p class="mb-1"><%#Eval("NewsDetails")%></p>
-                                        <small>Click for more details.</small>
+                                        <small>© Simply Almonds</small>
                                     </a>
-                                    <br />
                                 </ItemTemplate>
                             </asp:Repeater>
                         </div>

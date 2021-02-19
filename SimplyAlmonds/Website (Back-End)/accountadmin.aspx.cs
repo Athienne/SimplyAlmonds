@@ -14,31 +14,32 @@ namespace SimplyAlmonds.Website__Back_End_
         OleDbConnection conn;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["role"] == null)
+            if (Session["role"] != null)
             {
-                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
-            }
-            else if (Session["role"].ToString() == "user")
-            {
-                Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+                if (Session["role"].ToString() == "user")
+                {
+                    Response.Redirect("~/Website%20(Front-End)/UserAccount.aspx");
+                }
             }
             else
             {
-                string connstr = "Provider=Microsoft.Jet.OleDB.4.0; Data Source=";
-                connstr = "Provider=Microsoft.Jet.OleDB.4.0; Data Source=";
-
-                connstr += Server.MapPath("~/App_Data/simplyalmonds.Mdb");
-                conn = new OleDbConnection(connstr);
-                conn = new OleDbConnection(connstr);
-                conn.Open();
-                OleDbDataAdapter sqldata = new OleDbDataAdapter("select id as [ID], username as [Customer Name],  passw as [Password], email as [E-mail], active as [Active] from users where user_type='user'", conn);
-                DataTable table = new DataTable();
-                sqldata.Fill(table);
-                GridView1.DataSource = table;
-                GridView1.DataBind();
-
-                conn.Close();
+                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
             }
+
+            string connstr = "Provider=Microsoft.Jet.OleDB.4.0; Data Source=";
+            connstr = "Provider=Microsoft.Jet.OleDB.4.0; Data Source=";
+
+            connstr += Server.MapPath("~/App_Data/simplyalmonds.Mdb");
+            conn = new OleDbConnection(connstr);
+            conn = new OleDbConnection(connstr);
+            conn.Open();
+            OleDbDataAdapter sqldata = new OleDbDataAdapter("select id as [ID], username as [Customer Name],  passw as [Password], email as [E-mail], active as [Active] from users where user_type='user'", conn);
+            DataTable table = new DataTable();
+            sqldata.Fill(table);
+            GridView1.DataSource = table;
+            GridView1.DataBind();
+
+            conn.Close();
         }
 
         protected void updatebtn_Click(object sender, EventArgs e)

@@ -16,47 +16,48 @@ namespace SimplyAlmonds.Website__Back_End_
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["role"] == null)
+            if (Session["role"] != null)
             {
-                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
-            }
-            else if (Session["role"].ToString() == "user")
-            {
-                Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+                if (Session["role"].ToString() == "user")
+                {
+                    Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+                }
             }
             else
             {
-                if (!Page.IsPostBack)
+                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
+            }
+
+            if (!Page.IsPostBack)
+            {
+                try
                 {
-                    try
+                    HttpContext con = HttpContext.Current;
+                    int idvalue = int.Parse(con.Request["id"]);
+
+                    strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
+                    Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
+                    objConn = new OleDbConnection(strConnString);
+                    objConn.Open();
+
+                    // Load Event Data
+                    strSQL = "SELECT EventTitle, EventDetails FROM table_LatestEvents WHERE ID = " + idvalue + "";
+                    objCmd = new OleDbCommand(strSQL, objConn);
+                    OleDbDataReader reader = objCmd.ExecuteReader();
+
+                    while (reader.Read())
                     {
-                        HttpContext con = HttpContext.Current;
-                        int idvalue = int.Parse(con.Request["id"]);
-
-                        strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
-                        Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
-                        objConn = new OleDbConnection(strConnString);
-                        objConn.Open();
-
-                        // Load Event Data
-                        strSQL = "SELECT EventTitle, EventDetails FROM table_LatestEvents WHERE ID = " + idvalue + "";
-                        objCmd = new OleDbCommand(strSQL, objConn);
-                        OleDbDataReader reader = objCmd.ExecuteReader();
-
-                        while (reader.Read())
-                        {
-                            editEventTitle_text.Text = reader.GetString(0);
-                            editEventDetails_text.Text = reader.GetString(1);
-                        }
-
-                        reader.Close();
-                        objConn.Close();
-
+                        editEventTitle_text.Text = reader.GetString(0);
+                        editEventDetails_text.Text = reader.GetString(1);
                     }
-                    catch (Exception)
-                    {
-                        Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
-                    }
+
+                    reader.Close();
+                    objConn.Close();
+
+                }
+                catch (Exception)
+                {
+                    Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
                 }
             }    
         }

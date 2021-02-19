@@ -16,34 +16,35 @@ namespace SimplyAlmonds.Website__Back_End_
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["role"] == null)
+            if (Session["role"] != null)
             {
-                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
-            }
-            else if (Session["role"].ToString() == "user")
-            {
-                Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+                if (Session["role"].ToString() == "user")
+                {
+                    Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+                }
             }
             else
             {
-                strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
-               Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
-                objConn = new OleDbConnection(strConnString);
-                objConn.Open();
-
-                // Intial load of Latest Events and News
-                strSQL = "SELECT * FROM [order]";
-
-                OleDbDataReader dtReader;
-                objCmd = new OleDbCommand(strSQL, objConn);
-                dtReader = objCmd.ExecuteReader();
-
-                orderlist.DataSource = dtReader;
-                orderlist.DataBind();
-
-                dtReader.Close();
-                objConn.Close();
+                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
             }
+
+            strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
+            Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
+            objConn = new OleDbConnection(strConnString);
+            objConn.Open();
+
+            // Intial load of Latest Events and News
+            strSQL = "SELECT * FROM [order]";
+
+            OleDbDataReader dtReader;
+            objCmd = new OleDbCommand(strSQL, objConn);
+            dtReader = objCmd.ExecuteReader();
+
+            orderlist.DataSource = dtReader;
+            orderlist.DataBind();
+
+            dtReader.Close();
+            objConn.Close();
         }
 
         protected void orderDetails_Click(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace SimplyAlmonds.Website__Back_End_
                 emailLabel.Text = dtReader.GetString(5);
             }
 
-            dateLabel.Text = time.Date.ToString();
+            dateLabel.Text = time.Date.ToString("MM/dd/yyyy");
             dtReader.Close();
             objConn.Close();
 

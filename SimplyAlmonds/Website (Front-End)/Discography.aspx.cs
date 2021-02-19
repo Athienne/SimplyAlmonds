@@ -11,20 +11,12 @@ namespace SimplyAlmonds.UserPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if (Session["role"] != null)
             {
-                if (Session["role"].ToString() == null)
+                if (Session["role"].ToString() == "admin")
                 {
-                    Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
+                    Response.Redirect("~/Website%20(Back-End)/DiscographyBackEnd.aspx");
                 }
-                else if (Session["role"].ToString() == "admin")
-                {
-                    Response.Redirect("~/Website%20(Back-End)/HomeAdmin.aspx");
-                }
-            }
-            catch (Exception)
-            {
-
             }
         }
     }

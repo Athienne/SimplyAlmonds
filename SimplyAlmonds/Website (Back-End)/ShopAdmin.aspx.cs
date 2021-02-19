@@ -16,44 +16,45 @@ namespace SimplyAlmonds.Website__Back_End_
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["role"] == null)
+            if (Session["role"] != null)
             {
-                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
-            }
-            else if (Session["role"].ToString() == "user")
-            {
-                Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+                if (Session["role"].ToString() == "user")
+                {
+                    Response.Redirect("~/Website%20(Front-End)/Shop.aspx");
+                }
             }
             else
             {
-                if (!Page.IsPostBack)
-                {
-                    String strConnString;
-                    strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
-                    Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
-                    objConn = new OleDbConnection(strConnString);
-                    objConn.Open();
+                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
+            }
 
-                    // Intial load of Latest Events and News
-                    strSQL = "SELECT * FROM Shop where ProductType='Ticket'";
+            if (!Page.IsPostBack)
+            {
+                String strConnString;
+                strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
+                Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
+                objConn = new OleDbConnection(strConnString);
+                objConn.Open();
 
-                    OleDbDataReader dtReader;
-                    objCmd = new OleDbCommand(strSQL, objConn);
-                    dtReader = objCmd.ExecuteReader();
+                // Intial load of Latest Events and News
+                strSQL = "SELECT * FROM Shop where ProductType='Ticket'";
 
-                    TicketRepeater.DataSource = dtReader;
-                    TicketRepeater.DataBind();
+                OleDbDataReader dtReader;
+                objCmd = new OleDbCommand(strSQL, objConn);
+                dtReader = objCmd.ExecuteReader();
 
-                    strSQL = "SELECT * FROM Shop where ProductType='Single'";
-                    objCmd = new OleDbCommand(strSQL, objConn);
-                    dtReader = objCmd.ExecuteReader();
+                TicketRepeater.DataSource = dtReader;
+                TicketRepeater.DataBind();
 
-                    SingleRepeater.DataSource = dtReader;
-                    SingleRepeater.DataBind();
+                strSQL = "SELECT * FROM Shop where ProductType='Single'";
+                objCmd = new OleDbCommand(strSQL, objConn);
+                dtReader = objCmd.ExecuteReader();
 
-                    dtReader.Close();
-                    objConn.Close();
-                }
+                SingleRepeater.DataSource = dtReader;
+                SingleRepeater.DataBind();
+
+                dtReader.Close();
+                objConn.Close();
             }
         }
 

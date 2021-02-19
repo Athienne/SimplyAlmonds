@@ -16,6 +16,14 @@ namespace SimplyAlmonds.Website__Front_End_
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["role"] != null)
+            {
+                if (Session["role"].ToString() == "admin")
+                {
+                    Response.Redirect("~/Website%20(Back-End)/ShopAdmin.aspx");
+                }
+            }
+
             if (!Page.IsPostBack)
             {
                 String strConnString;

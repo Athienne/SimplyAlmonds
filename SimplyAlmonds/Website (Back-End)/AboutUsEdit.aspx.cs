@@ -29,7 +29,13 @@ namespace SimplyAlmonds.Website__Back_End_
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["role"] != null)
+            {
+                if (Session["role"].ToString() == "user")
+                {
+                    Response.Redirect("~/Website%20(Front-End)/AboutUs.aspx");
+                }
+            }
         }
 
         protected void checkModalCompany_click(object sender, EventArgs e)

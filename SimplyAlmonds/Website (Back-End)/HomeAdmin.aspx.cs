@@ -28,44 +28,45 @@ namespace SimplyAlmonds.Website_Back_End_
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["role"] == null)
+            if (Session["role"] != null)
             {
-                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
-            }
-            else if (Session["role"].ToString() == "user")
-            {
-                Response.Redirect("~/Website%20(Front-End)/Home.aspx");
+                if (Session["role"].ToString() == "user")
+                {
+                    Response.Redirect("~/Website%20(Front-End)/Biography.aspx");
+                }
             }
             else
             {
-                if (!Page.IsPostBack)
-                {
-                    String strConnString;
-                    strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
-                    Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
-                    objConn = new OleDbConnection(strConnString);
-                    objConn.Open();
+                Response.Redirect("~/Website%20(Front-End)/LoginUser.aspx");
+            }
 
-                    // Intial load of Latest Events and News
-                    strSQL = "SELECT * FROM table_LatestEvents";
+            if (!Page.IsPostBack)
+            {
+                String strConnString;
+                strConnString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
+                Server.MapPath("~/App_Data/simplyalmonds.mdb") + ";";
+                objConn = new OleDbConnection(strConnString);
+                objConn.Open();
 
-                    OleDbDataReader dtReader;
-                    objCmd = new OleDbCommand(strSQL, objConn);
-                    dtReader = objCmd.ExecuteReader();
+                // Intial load of Latest Events and News
+                strSQL = "SELECT * FROM table_LatestEvents";
 
-                    latestEvents_repeater.DataSource = dtReader;
-                    latestEvents_repeater.DataBind();
+                OleDbDataReader dtReader;
+                objCmd = new OleDbCommand(strSQL, objConn);
+                dtReader = objCmd.ExecuteReader();
 
-                    strSQL = "SELECT * FROM table_News";
-                    objCmd = new OleDbCommand(strSQL, objConn);
-                    dtReader = objCmd.ExecuteReader();
+                latestEvents_repeater.DataSource = dtReader;
+                latestEvents_repeater.DataBind();
 
-                    news_repeater.DataSource = dtReader;
-                    news_repeater.DataBind();
+                strSQL = "SELECT * FROM table_News";
+                objCmd = new OleDbCommand(strSQL, objConn);
+                dtReader = objCmd.ExecuteReader();
 
-                    dtReader.Close();
-                    objConn.Close();
-                }
+                news_repeater.DataSource = dtReader;
+                news_repeater.DataBind();
+
+                dtReader.Close();
+                objConn.Close();
             }
         }
 
